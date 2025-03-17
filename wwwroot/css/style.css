@@ -1,0 +1,52 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.containerTelaInicial {
+    background-color: #990000;
+    width: 380px;
+    height: 750px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    aspect-ratio: 9/16;
+}
+
+.imgLogo {
+    position: relative;
+    top: 50px;
+    height: 100px;
+    width: 100px;
+}
+
+.imgLanche {
+    position: relative;
+    bottom: 35px;
+    height: 300px;
+    width: 320px;
+    filter: drop-shadow(10px 15px 20px rgba(0, 0, 0, 0.6));
+}
+
+
+.botao {
+    background-color: #F7F7CF;
+    color: #990000;
+    width: 350px;
+    height: 57px;
+    border-radius: 50px;
+    border-color: transparent;
+    cursor: pointer;
+}
+
+p {
+    position: relative;
+    top: 50px;
+    font-weight: bold;
+    font-size: 40px;
+    color: #F7F7CF;
+    text-align: center;
+}
