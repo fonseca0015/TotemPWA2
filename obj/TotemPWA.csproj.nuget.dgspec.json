@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Gabriel\\TotemPWA2\\TotemPWA.csproj": {}
+    "C:\\Users\\Gabriel\\Desktop\\projetoTotem\\TotemPWA2\\TotemPWA.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Gabriel\\TotemPWA2\\TotemPWA.csproj": {
+    "C:\\Users\\Gabriel\\Desktop\\projetoTotem\\TotemPWA2\\TotemPWA.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Gabriel\\TotemPWA2\\TotemPWA.csproj",
+        "projectUniqueName": "C:\\Users\\Gabriel\\Desktop\\projetoTotem\\TotemPWA2\\TotemPWA.csproj",
         "projectName": "TotemPWA",
-        "projectPath": "C:\\Users\\Gabriel\\TotemPWA2\\TotemPWA.csproj",
+        "projectPath": "C:\\Users\\Gabriel\\Desktop\\projetoTotem\\TotemPWA2\\TotemPWA.csproj",
         "packagesPath": "C:\\Users\\Gabriel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Gabriel\\TotemPWA2\\obj\\",
+        "outputPath": "C:\\Users\\Gabriel\\Desktop\\projetoTotem\\TotemPWA2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Gabriel\\AppData\\Roaming\\NuGet\\NuGet.Config"

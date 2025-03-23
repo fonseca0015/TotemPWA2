@@ -7,7 +7,79 @@ body {
 
 .containerPedidos {
     background-color: #fff;
-    width: 380px;
-    height: 750px;
+    width: 400px;
+    height: 900px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.imgHeader {
+    height: 250px;
+    width: 400px;
+}
+
+.colunaEsquerda {
+    height: 550px;
+    width: 125px;
+    background-color: #FAFAFA;
+    margin-top: -10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 15px;
+    padding-top: 10px;
+}
+
+.quadrado1 {
+    height: 150px;
+    width: 90px;
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.quadrado2 {
+    height: 150px;
+    width: 90px;
+    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.quadrado3 {
+    height: 150px;
+    width: 90px;
+    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.quadrado4 {
+    height: 150px;
+    width: 90px;
+    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.quadrado5 {
+    height: 150px;
+    width: 90px;
+    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.quadrado6 {
+    height: 150px;
+    width: 90px;
+    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.quadrados {
+    margin-top: -10px;
 }
