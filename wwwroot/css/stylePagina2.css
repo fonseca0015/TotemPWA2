@@ -8,7 +8,7 @@ body {
 .containerPedidos {
     background-color: #fff;
     width: 400px;
-    height: 900px;
+    height: 850px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -18,8 +18,8 @@ body {
 }
 
 .colunaEsquerda {
-    height: 550px;
-    width: 125px;
+    height: 480px;
+    width: 115px;
     background-color: #FAFAFA;
     margin-top: -10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
@@ -33,53 +33,157 @@ body {
 }
 
 .quadrado1 {
-    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
     width: 90px;
-    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
     background-color: #fff;
     border-radius: 10px;
 }
 
 .quadrado2 {
-    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
     width: 90px;
-    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
     background-color: #fff;
     border-radius: 10px;
 }
 
 .quadrado3 {
-    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
     width: 90px;
-    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
     background-color: #fff;
     border-radius: 10px;
 }
 
 .quadrado4 {
-    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
     width: 90px;
-    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
     background-color: #fff;
     border-radius: 10px;
 }
 
 .quadrado5 {
-    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
     width: 90px;
-    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
     background-color: #fff;
     border-radius: 10px;
 }
 
 .quadrado6 {
-    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
     width: 90px;
-    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
     background-color: #fff;
     border-radius: 10px;
 }
 
 .quadrados {
     margin-top: -10px;
+}
+
+.divResumoPedido {
+    height: 101px;
+    width: 400px;
+    box-shadow: 10px 5px 50px rgba(0, 0, 0, 0.2);
+    background-color: #FAFAFA;
+}
+
+.imgLancheCategoria {
+    height: 50px;
+    width: 50px;
+    margin-bottom: 8px;
+}
+
+.imgCombosCategoria {
+    margin-right: 20px;
+    height: 50px;
+    width: 90px;
+    margin-bottom: 8px;
+}
+
+.imgSobremesasCategoria {
+    margin-bottom: 10px;
+    height: 55px;
+    width: 50px;
+}
+
+.imgBebidasCategoria {
+    height: 55px;
+    width: 50px;
+    margin-bottom: 8px;
+}
+
+.imgExtraCategoria {
+    height: 55px;
+    width: 50px;
+    margin-bottom: 8px;
+}
+
+.imgMolhosCategoria {
+    height: 55px;
+    width: 50px;
+    margin-bottom: 8px;
+}
+
+.textoLanchesCategoria {
+    position: absolute;
+    margin-top: 55px;
+    font-size: 11px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.textoCombosCategoria {
+    position: absolute;
+    margin-top: 55px;
+    font-size: 11px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.textoSobremesasCategoria {
+    position: absolute;
+    margin-top: 63px;
+    font-size: 11px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.textoBebidasCategoria {
+    position: absolute;
+    margin-top: 60px;
+    font-size: 11px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.textoExtrasCategoria {
+    position: absolute;
+    margin-top: 61px;
+    font-size: 11px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.textoMolhosCategoria {
+    position: absolute;
+    margin-top: 61px;
+    font-size: 11px;
+    font-family: Arial, Helvetica, sans-serif;
 }
