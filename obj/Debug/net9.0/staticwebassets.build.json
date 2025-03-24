@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Q4/H4XUm8s+gJVkHFNah3NIRAG/8kUjMwjh444vmt2A=",
+  "Hash": "JXZPk9mu04h9cqKWuiA8q5+5+cc+plyAGjtqw5+cWus=",
   "Source": "TotemPWA",
   "BasePath": "_content/TotemPWA",
   "Mode": "Default",
@@ -668,12 +668,12 @@
       "OriginalItemSpec": "C:\\Users\\aluno\\Desktop\\Gabriel Fonseca\\TotemPWA2\\wwwroot\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Identity": "C:\\Users\\aluno\\Desktop\\Gabriel Fonseca\\TotemPWA2\\obj\\Debug\\net9.0\\compressed\\gtrgf87wf6-xb75fp98qe.gz",
+      "Identity": "C:\\Users\\aluno\\Desktop\\Gabriel Fonseca\\TotemPWA2\\obj\\Debug\\net9.0\\compressed\\gtrgf87wf6-lwehyem0a5.gz",
       "SourceId": "TotemPWA",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\aluno\\Desktop\\Gabriel Fonseca\\TotemPWA2\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/TotemPWA",
-      "RelativePath": "css/stylePagina2#[.{fingerprint=xb75fp98qe}]?.css.gz",
+      "RelativePath": "css/stylePagina2#[.{fingerprint=lwehyem0a5}]?.css.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -682,8 +682,8 @@
       "RelatedAsset": "C:\\Users\\aluno\\Desktop\\Gabriel Fonseca\\TotemPWA2\\wwwroot\\css\\stylePagina2.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "g49qt1xhsb",
-      "Integrity": "UB7ASIKbUjWjREFkVa4ouRWjcKsA2s+F7Ug+3Fjno6I=",
+      "Fingerprint": "c5e4k1cq82",
+      "Integrity": "YGcqkXTuj92scBU2e1mXYTUWd6dp4ZXx2fRpe05ycSU=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\aluno\\Desktop\\Gabriel Fonseca\\TotemPWA2\\wwwroot\\css\\stylePagina2.css"
@@ -1501,8 +1501,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "xb75fp98qe",
-      "Integrity": "XbdZrxpuiOgb3yZir9mzO4+CSVfC+uZ8EUz8XK8JpAo=",
+      "Fingerprint": "lwehyem0a5",
+      "Integrity": "S+Bdk7O+yBnR/rP/7vfTIqJTEsJXFLhopDDn3HinJEk=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\stylePagina2.css"
@@ -3724,12 +3724,12 @@
     },
     {
       "Route": "css/stylePagina2.css",
-      "AssetFile": "C:\\Users\\aluno\\Desktop\\Gabriel Fonseca\\TotemPWA2\\obj\\Debug\\net9.0\\compressed\\gtrgf87wf6-xb75fp98qe.gz",
+      "AssetFile": "C:\\Users\\aluno\\Desktop\\Gabriel Fonseca\\TotemPWA2\\obj\\Debug\\net9.0\\compressed\\gtrgf87wf6-lwehyem0a5.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.001953125000"
+          "Quality": "0.001926782274"
         }
       ],
       "ResponseHeaders": [
@@ -3739,15 +3739,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "511"
+          "Value": "518"
         },
         {
           "Name": "ETag",
-          "Value": "\"UB7ASIKbUjWjREFkVa4ouRWjcKsA2s+F7Ug+3Fjno6I=\""
+          "Value": "\"YGcqkXTuj92scBU2e1mXYTUWd6dp4ZXx2fRpe05ycSU=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 24 Mar 2025 17:18:13 GMT"
+          "Value": "Mon, 24 Mar 2025 17:42:00 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3767,13 +3767,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"XbdZrxpuiOgb3yZir9mzO4+CSVfC+uZ8EUz8XK8JpAo=\""
+          "Value": "W/\"S+Bdk7O+yBnR/rP/7vfTIqJTEsJXFLhopDDn3HinJEk=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-XbdZrxpuiOgb3yZir9mzO4+CSVfC+uZ8EUz8XK8JpAo="
+          "Value": "sha256-S+Bdk7O+yBnR/rP/7vfTIqJTEsJXFLhopDDn3HinJEk="
         }
       ]
     },
@@ -3788,7 +3788,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3144"
+          "Value": "3172"
         },
         {
           "Name": "Content-Type",
@@ -3796,11 +3796,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"XbdZrxpuiOgb3yZir9mzO4+CSVfC+uZ8EUz8XK8JpAo=\""
+          "Value": "\"S+Bdk7O+yBnR/rP/7vfTIqJTEsJXFLhopDDn3HinJEk=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 24 Mar 2025 17:18:13 GMT"
+          "Value": "Mon, 24 Mar 2025 17:42:00 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3810,13 +3810,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-XbdZrxpuiOgb3yZir9mzO4+CSVfC+uZ8EUz8XK8JpAo="
+          "Value": "sha256-S+Bdk7O+yBnR/rP/7vfTIqJTEsJXFLhopDDn3HinJEk="
         }
       ]
     },
     {
       "Route": "css/stylePagina2.css.gz",
-      "AssetFile": "C:\\Users\\aluno\\Desktop\\Gabriel Fonseca\\TotemPWA2\\obj\\Debug\\net9.0\\compressed\\gtrgf87wf6-xb75fp98qe.gz",
+      "AssetFile": "C:\\Users\\aluno\\Desktop\\Gabriel Fonseca\\TotemPWA2\\obj\\Debug\\net9.0\\compressed\\gtrgf87wf6-lwehyem0a5.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3825,7 +3825,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "511"
+          "Value": "518"
         },
         {
           "Name": "Content-Type",
@@ -3833,11 +3833,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"UB7ASIKbUjWjREFkVa4ouRWjcKsA2s+F7Ug+3Fjno6I=\""
+          "Value": "\"YGcqkXTuj92scBU2e1mXYTUWd6dp4ZXx2fRpe05ycSU=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 24 Mar 2025 17:18:13 GMT"
+          "Value": "Mon, 24 Mar 2025 17:42:00 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3855,18 +3855,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-UB7ASIKbUjWjREFkVa4ouRWjcKsA2s+F7Ug+3Fjno6I="
+          "Value": "sha256-YGcqkXTuj92scBU2e1mXYTUWd6dp4ZXx2fRpe05ycSU="
         }
       ]
     },
     {
-      "Route": "css/stylePagina2.xb75fp98qe.css",
-      "AssetFile": "C:\\Users\\aluno\\Desktop\\Gabriel Fonseca\\TotemPWA2\\obj\\Debug\\net9.0\\compressed\\gtrgf87wf6-xb75fp98qe.gz",
+      "Route": "css/stylePagina2.lwehyem0a5.css",
+      "AssetFile": "C:\\Users\\aluno\\Desktop\\Gabriel Fonseca\\TotemPWA2\\obj\\Debug\\net9.0\\compressed\\gtrgf87wf6-lwehyem0a5.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.001953125000"
+          "Quality": "0.001926782274"
         }
       ],
       "ResponseHeaders": [
@@ -3876,15 +3876,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "511"
+          "Value": "518"
         },
         {
           "Name": "ETag",
-          "Value": "\"UB7ASIKbUjWjREFkVa4ouRWjcKsA2s+F7Ug+3Fjno6I=\""
+          "Value": "\"YGcqkXTuj92scBU2e1mXYTUWd6dp4ZXx2fRpe05ycSU=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 24 Mar 2025 17:18:13 GMT"
+          "Value": "Mon, 24 Mar 2025 17:42:00 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3904,13 +3904,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"XbdZrxpuiOgb3yZir9mzO4+CSVfC+uZ8EUz8XK8JpAo=\""
+          "Value": "W/\"S+Bdk7O+yBnR/rP/7vfTIqJTEsJXFLhopDDn3HinJEk=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "xb75fp98qe"
+          "Value": "lwehyem0a5"
         },
         {
           "Name": "label",
@@ -3918,12 +3918,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-XbdZrxpuiOgb3yZir9mzO4+CSVfC+uZ8EUz8XK8JpAo="
+          "Value": "sha256-S+Bdk7O+yBnR/rP/7vfTIqJTEsJXFLhopDDn3HinJEk="
         }
       ]
     },
     {
-      "Route": "css/stylePagina2.xb75fp98qe.css",
+      "Route": "css/stylePagina2.lwehyem0a5.css",
       "AssetFile": "C:\\Users\\aluno\\Desktop\\Gabriel Fonseca\\TotemPWA2\\wwwroot\\css\\stylePagina2.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -3933,7 +3933,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3144"
+          "Value": "3172"
         },
         {
           "Name": "Content-Type",
@@ -3941,11 +3941,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"XbdZrxpuiOgb3yZir9mzO4+CSVfC+uZ8EUz8XK8JpAo=\""
+          "Value": "\"S+Bdk7O+yBnR/rP/7vfTIqJTEsJXFLhopDDn3HinJEk=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 24 Mar 2025 17:18:13 GMT"
+          "Value": "Mon, 24 Mar 2025 17:42:00 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3955,7 +3955,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "xb75fp98qe"
+          "Value": "lwehyem0a5"
         },
         {
           "Name": "label",
@@ -3963,13 +3963,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-XbdZrxpuiOgb3yZir9mzO4+CSVfC+uZ8EUz8XK8JpAo="
+          "Value": "sha256-S+Bdk7O+yBnR/rP/7vfTIqJTEsJXFLhopDDn3HinJEk="
         }
       ]
     },
     {
-      "Route": "css/stylePagina2.xb75fp98qe.css.gz",
-      "AssetFile": "C:\\Users\\aluno\\Desktop\\Gabriel Fonseca\\TotemPWA2\\obj\\Debug\\net9.0\\compressed\\gtrgf87wf6-xb75fp98qe.gz",
+      "Route": "css/stylePagina2.lwehyem0a5.css.gz",
+      "AssetFile": "C:\\Users\\aluno\\Desktop\\Gabriel Fonseca\\TotemPWA2\\obj\\Debug\\net9.0\\compressed\\gtrgf87wf6-lwehyem0a5.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3978,7 +3978,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "511"
+          "Value": "518"
         },
         {
           "Name": "Content-Type",
@@ -3986,11 +3986,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"UB7ASIKbUjWjREFkVa4ouRWjcKsA2s+F7Ug+3Fjno6I=\""
+          "Value": "\"YGcqkXTuj92scBU2e1mXYTUWd6dp4ZXx2fRpe05ycSU=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 24 Mar 2025 17:18:13 GMT"
+          "Value": "Mon, 24 Mar 2025 17:42:00 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -4008,7 +4008,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "xb75fp98qe"
+          "Value": "lwehyem0a5"
         },
         {
           "Name": "label",
@@ -4016,7 +4016,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-UB7ASIKbUjWjREFkVa4ouRWjcKsA2s+F7Ug+3Fjno6I="
+          "Value": "sha256-YGcqkXTuj92scBU2e1mXYTUWd6dp4ZXx2fRpe05ycSU="
         }
       ]
     },
