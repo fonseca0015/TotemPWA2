@@ -82,11 +82,15 @@ body {
 .quadradoLanche7,
 .quadradoLanche8,
 .quadradoLanche9 {
-    height: 150px;
-    width: 100px;
+    height: 180px;
+    width: 150px;
     background-color: #FAFAFA;
     border-radius: 8px;
     box-shadow: 10px 5px 50px rgba(0, 0, 0, 0.2);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .quadradoCategoria {
@@ -110,7 +114,6 @@ body {
 }
 
 .imgLancheCategoria,
-.imgCombosCategoria,
 .imgSobremesasCategoria,
 .imgBebidasCategoria,
 .imgExtraCategoria,
@@ -119,3 +122,41 @@ body {
     width: auto;
     max-width: 70px;
 }
+
+.lanchesFotos {
+    height: 80px;
+    width: 100px;
+    margin: 0;
+}
+
+.lancheFrontEnd {
+    height: 200px;
+    width: 100px;
+}
+
+
+.imgCombosCategoria {
+    padding-right: 17px;
+    height: 50px;
+    width: auto;
+    max-width: 70px;
+}
+
+.textoLanche1,
+.preçoLanche1 {
+    margin: 0; /* Remove espaço externo dos textos */
+}
+
+.preçoLanche1 {
+    color: #42B61F;
+    padding-bottom: 0px;
+}
+
+.descLanche1 {
+    color: gray;
+    font-size: 10px;
+    padding-left: 10px;
+}
+
+
+
