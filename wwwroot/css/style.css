@@ -7,8 +7,8 @@ body {
 
 .containerTelaInicial {
     background-color: #990000;
-    width: 380px;
-    height: 750px;
+    width: 28vw;
+    height: 75vh;
     justify-content: center;
     align-items: center;
     display: flex;
