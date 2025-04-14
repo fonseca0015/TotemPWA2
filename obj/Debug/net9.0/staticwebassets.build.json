@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "2e63+32ltSwlkDZSGzxosTklAGmF4G8bpKgF20EtitE=",
+  "Hash": "H8xXVUH48xoysr8CWnKyCXwGO6tHEKmDB0TMLWjT3Lg=",
   "Source": "TotemPWA",
   "BasePath": "_content/TotemPWA",
   "Mode": "Default",
@@ -122,12 +122,12 @@
       "OriginalItemSpec": "C:\\Users\\Gabriel\\Desktop\\totem1\\TotemPWa2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\Gabriel\\Desktop\\totem1\\TotemPWa2\\obj\\Debug\\net9.0\\compressed\\44zl1togr2-529py1wtr8.gz",
+      "Identity": "C:\\Users\\Gabriel\\Desktop\\totem1\\TotemPWa2\\obj\\Debug\\net9.0\\compressed\\44zl1togr2-jzxl0o6848.gz",
       "SourceId": "TotemPWA",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Gabriel\\Desktop\\totem1\\TotemPWa2\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/TotemPWA",
-      "RelativePath": "css/stylePagina3#[.{fingerprint=529py1wtr8}]?.css.gz",
+      "RelativePath": "css/stylePagina3#[.{fingerprint=jzxl0o6848}]?.css.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -136,8 +136,8 @@
       "RelatedAsset": "C:\\Users\\Gabriel\\Desktop\\totem1\\TotemPWa2\\wwwroot\\css\\stylePagina3.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "rcq0i89whd",
-      "Integrity": "a4dneWUXuCl5eRegv0DD0tqYPbCSeT4BZ1N+RAV0OxY=",
+      "Fingerprint": "0ir0rc01vu",
+      "Integrity": "OHYJzPYyJcc7r4KBqr1oIztQ8TYjHocYr9hbsd2Imac=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\Gabriel\\Desktop\\totem1\\TotemPWa2\\wwwroot\\css\\stylePagina3.css"
@@ -1543,8 +1543,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "529py1wtr8",
-      "Integrity": "47+R/Gv0piDDA3kaR55YSBryySLl7g0lX9gLUdScUww=",
+      "Fingerprint": "jzxl0o6848",
+      "Integrity": "T1/PXQ4kLuRVG8p2g9yYRW7mxVqnbryzEuACsxJeRNc=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\stylePagina3.css"
@@ -4294,13 +4294,13 @@
       ]
     },
     {
-      "Route": "css/stylePagina3.529py1wtr8.css",
-      "AssetFile": "C:\\Users\\Gabriel\\Desktop\\totem1\\TotemPWa2\\obj\\Debug\\net9.0\\compressed\\44zl1togr2-529py1wtr8.gz",
+      "Route": "css/stylePagina3.css",
+      "AssetFile": "C:\\Users\\Gabriel\\Desktop\\totem1\\TotemPWa2\\obj\\Debug\\net9.0\\compressed\\44zl1togr2-jzxl0o6848.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.001114827202"
+          "Quality": "0.001021450460"
         }
       ],
       "ResponseHeaders": [
@@ -4310,19 +4310,19 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "896"
+          "Value": "978"
         },
         {
           "Name": "ETag",
-          "Value": "\"a4dneWUXuCl5eRegv0DD0tqYPbCSeT4BZ1N+RAV0OxY=\""
+          "Value": "\"OHYJzPYyJcc7r4KBqr1oIztQ8TYjHocYr9hbsd2Imac=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 14 Apr 2025 01:50:28 GMT"
+          "Value": "Mon, 14 Apr 2025 01:57:14 GMT"
         },
         {
           "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
+          "Value": "no-cache"
         },
         {
           "Name": "Content-Encoding",
@@ -4338,26 +4338,18 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"47+R/Gv0piDDA3kaR55YSBryySLl7g0lX9gLUdScUww=\""
+          "Value": "W/\"T1/PXQ4kLuRVG8p2g9yYRW7mxVqnbryzEuACsxJeRNc=\""
         }
       ],
       "EndpointProperties": [
         {
-          "Name": "fingerprint",
-          "Value": "529py1wtr8"
-        },
-        {
-          "Name": "label",
-          "Value": "css/stylePagina3.css"
-        },
-        {
           "Name": "integrity",
-          "Value": "sha256-47+R/Gv0piDDA3kaR55YSBryySLl7g0lX9gLUdScUww="
+          "Value": "sha256-T1/PXQ4kLuRVG8p2g9yYRW7mxVqnbryzEuACsxJeRNc="
         }
       ]
     },
     {
-      "Route": "css/stylePagina3.529py1wtr8.css",
+      "Route": "css/stylePagina3.css",
       "AssetFile": "C:\\Users\\Gabriel\\Desktop\\totem1\\TotemPWa2\\wwwroot\\css\\stylePagina3.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -4367,7 +4359,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3397"
+          "Value": "3876"
         },
         {
           "Name": "Content-Type",
@@ -4375,11 +4367,156 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"47+R/Gv0piDDA3kaR55YSBryySLl7g0lX9gLUdScUww=\""
+          "Value": "\"T1/PXQ4kLuRVG8p2g9yYRW7mxVqnbryzEuACsxJeRNc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 14 Apr 2025 01:50:28 GMT"
+          "Value": "Mon, 14 Apr 2025 01:57:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-T1/PXQ4kLuRVG8p2g9yYRW7mxVqnbryzEuACsxJeRNc="
+        }
+      ]
+    },
+    {
+      "Route": "css/stylePagina3.css.gz",
+      "AssetFile": "C:\\Users\\Gabriel\\Desktop\\totem1\\TotemPWa2\\obj\\Debug\\net9.0\\compressed\\44zl1togr2-jzxl0o6848.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "978"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"OHYJzPYyJcc7r4KBqr1oIztQ8TYjHocYr9hbsd2Imac=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 14 Apr 2025 01:57:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-OHYJzPYyJcc7r4KBqr1oIztQ8TYjHocYr9hbsd2Imac="
+        }
+      ]
+    },
+    {
+      "Route": "css/stylePagina3.jzxl0o6848.css",
+      "AssetFile": "C:\\Users\\Gabriel\\Desktop\\totem1\\TotemPWa2\\obj\\Debug\\net9.0\\compressed\\44zl1togr2-jzxl0o6848.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001021450460"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "978"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"OHYJzPYyJcc7r4KBqr1oIztQ8TYjHocYr9hbsd2Imac=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 14 Apr 2025 01:57:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"T1/PXQ4kLuRVG8p2g9yYRW7mxVqnbryzEuACsxJeRNc=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "jzxl0o6848"
+        },
+        {
+          "Name": "label",
+          "Value": "css/stylePagina3.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-T1/PXQ4kLuRVG8p2g9yYRW7mxVqnbryzEuACsxJeRNc="
+        }
+      ]
+    },
+    {
+      "Route": "css/stylePagina3.jzxl0o6848.css",
+      "AssetFile": "C:\\Users\\Gabriel\\Desktop\\totem1\\TotemPWa2\\wwwroot\\css\\stylePagina3.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3876"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"T1/PXQ4kLuRVG8p2g9yYRW7mxVqnbryzEuACsxJeRNc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 14 Apr 2025 01:57:14 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -4389,7 +4526,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "529py1wtr8"
+          "Value": "jzxl0o6848"
         },
         {
           "Name": "label",
@@ -4397,13 +4534,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-47+R/Gv0piDDA3kaR55YSBryySLl7g0lX9gLUdScUww="
+          "Value": "sha256-T1/PXQ4kLuRVG8p2g9yYRW7mxVqnbryzEuACsxJeRNc="
         }
       ]
     },
     {
-      "Route": "css/stylePagina3.529py1wtr8.css.gz",
-      "AssetFile": "C:\\Users\\Gabriel\\Desktop\\totem1\\TotemPWa2\\obj\\Debug\\net9.0\\compressed\\44zl1togr2-529py1wtr8.gz",
+      "Route": "css/stylePagina3.jzxl0o6848.css.gz",
+      "AssetFile": "C:\\Users\\Gabriel\\Desktop\\totem1\\TotemPWa2\\obj\\Debug\\net9.0\\compressed\\44zl1togr2-jzxl0o6848.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4412,7 +4549,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "896"
+          "Value": "978"
         },
         {
           "Name": "Content-Type",
@@ -4420,11 +4557,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"a4dneWUXuCl5eRegv0DD0tqYPbCSeT4BZ1N+RAV0OxY=\""
+          "Value": "\"OHYJzPYyJcc7r4KBqr1oIztQ8TYjHocYr9hbsd2Imac=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 14 Apr 2025 01:50:28 GMT"
+          "Value": "Mon, 14 Apr 2025 01:57:14 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -4442,7 +4579,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "529py1wtr8"
+          "Value": "jzxl0o6848"
         },
         {
           "Name": "label",
@@ -4450,144 +4587,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-a4dneWUXuCl5eRegv0DD0tqYPbCSeT4BZ1N+RAV0OxY="
-        }
-      ]
-    },
-    {
-      "Route": "css/stylePagina3.css",
-      "AssetFile": "C:\\Users\\Gabriel\\Desktop\\totem1\\TotemPWa2\\obj\\Debug\\net9.0\\compressed\\44zl1togr2-529py1wtr8.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.001114827202"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "896"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"a4dneWUXuCl5eRegv0DD0tqYPbCSeT4BZ1N+RAV0OxY=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 14 Apr 2025 01:50:28 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"47+R/Gv0piDDA3kaR55YSBryySLl7g0lX9gLUdScUww=\""
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-47+R/Gv0piDDA3kaR55YSBryySLl7g0lX9gLUdScUww="
-        }
-      ]
-    },
-    {
-      "Route": "css/stylePagina3.css",
-      "AssetFile": "C:\\Users\\Gabriel\\Desktop\\totem1\\TotemPWa2\\wwwroot\\css\\stylePagina3.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "3397"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"47+R/Gv0piDDA3kaR55YSBryySLl7g0lX9gLUdScUww=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 14 Apr 2025 01:50:28 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-47+R/Gv0piDDA3kaR55YSBryySLl7g0lX9gLUdScUww="
-        }
-      ]
-    },
-    {
-      "Route": "css/stylePagina3.css.gz",
-      "AssetFile": "C:\\Users\\Gabriel\\Desktop\\totem1\\TotemPWa2\\obj\\Debug\\net9.0\\compressed\\44zl1togr2-529py1wtr8.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "896"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"a4dneWUXuCl5eRegv0DD0tqYPbCSeT4BZ1N+RAV0OxY=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 14 Apr 2025 01:50:28 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-a4dneWUXuCl5eRegv0DD0tqYPbCSeT4BZ1N+RAV0OxY="
+          "Value": "sha256-OHYJzPYyJcc7r4KBqr1oIztQ8TYjHocYr9hbsd2Imac="
         }
       ]
     },
