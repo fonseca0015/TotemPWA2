@@ -103,8 +103,25 @@
             </div>
         </div>
 
-        <div class="divResumoPedido"></div>
+<div class="divResumoPedido">
+    <div class="infoResumo">
+        <p class="textoResumo">Total de itens: <strong>0</strong></p>
+        <p class="textoResumo">Total do pedido: <span class="precoResumo">R$ 0</span></p>
     </div>
+
+    <div class="divCarrinho">
+        <div class="barraContainer">
+            <div class="barraPreenchida" style="width: 15%;"></div>
+        </div>
+        <p class="txtVerCarrinho">VER CARRINHO</p>
+        <img src="~/imgs/carrinhoIcon.png" alt="Carrinho" class="imgCarrinho">
+    </div>
+
+    <div class="containerBotaoPronto">
+        <a class="botao-pronto" target="_blank" href="@Url.Action("Tela2", "Home")">Pronto!</a>
+    </div>
+</div>
+
 
 </body>
 </html>

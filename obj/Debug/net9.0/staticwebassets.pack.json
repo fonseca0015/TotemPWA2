@@ -25,6 +25,14 @@
       "PackagePath": "staticwebassets\\imgs\\ad.jpg"
     },
     {
+      "Id": "C:\\Users\\Gabriel\\Desktop\\totem\\TotemPWA2\\wwwroot\\imgs\\carrinhoIcon.jpeg",
+      "PackagePath": "staticwebassets\\imgs\\carrinhoIcon.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Gabriel\\Desktop\\totem\\TotemPWA2\\wwwroot\\imgs\\carrinhoIcon.png",
+      "PackagePath": "staticwebassets\\imgs\\carrinhoIcon.png"
+    },
+    {
       "Id": "C:\\Users\\Gabriel\\Desktop\\totem\\TotemPWA2\\wwwroot\\imgs\\imgBebidasCategoria.png",
       "PackagePath": "staticwebassets\\imgs\\imgBebidasCategoria.png"
     },

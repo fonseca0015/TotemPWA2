@@ -693,5 +693,5 @@ C:\Users\aluno\Desktop\Totem\TotemPWA2\obj\Debug\net9.0\TotemPWA.pdb
 C:\Users\aluno\Desktop\Totem\TotemPWA2\obj\Debug\net9.0\TotemPWA.genruntimeconfig.cache
 C:\Users\aluno\Desktop\Totem\TotemPWA2\obj\Debug\net9.0\ref\TotemPWA.dll
 C:\Users\aluno\Desktop\Totem\TotemPWA2\obj\Debug\net9.0\compressed\gtrgf87wf6-c3v9gdk0l1.gz
-C:\Users\Gabriel\Desktop\totem\TotemPWA2\obj\Debug\net9.0\compressed\8voel94ewa-0n2n6zw0t1.gz
-C:\Users\Gabriel\Desktop\totem\TotemPWA2\obj\Debug\net9.0\compressed\gtrgf87wf6-55xa7xyjxj.gz
+C:\Users\Gabriel\Desktop\totem\TotemPWA2\obj\Debug\net9.0\compressed\8voel94ewa-tm0ytrm9nx.gz
+C:\Users\Gabriel\Desktop\totem\TotemPWA2\obj\Debug\net9.0\compressed\gtrgf87wf6-io34mgkof1.gz
