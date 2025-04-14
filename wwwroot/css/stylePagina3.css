@@ -49,6 +49,7 @@
     border: none;
     font-size: 12px;
     cursor: pointer;
+    text-decoration: none;
   }
 
   .cupom {
@@ -179,6 +180,7 @@
   .btn-cancelar {
     background-color: #c20000;
     color: white;
+    text-decoration: none;
   }
 
   .btn-confirmar {
