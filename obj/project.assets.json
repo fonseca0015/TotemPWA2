@@ -8,19 +8,19 @@
     "net9.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Pedro\\.nuget\\packages\\": {}
+    "C:\\Users\\Gabriel\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Pedro\\OneDrive\\Área de Trabalho\\totem\\TotemPWA2\\TotemPWA.csproj",
+      "projectUniqueName": "C:\\Users\\Gabriel\\Desktop\\totem1\\TotemPWa2\\TotemPWA.csproj",
       "projectName": "TotemPWA",
-      "projectPath": "C:\\Users\\Pedro\\OneDrive\\Área de Trabalho\\totem\\TotemPWA2\\TotemPWA.csproj",
-      "packagesPath": "C:\\Users\\Pedro\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Pedro\\OneDrive\\Área de Trabalho\\totem\\TotemPWA2\\obj\\",
+      "projectPath": "C:\\Users\\Gabriel\\Desktop\\totem1\\TotemPWa2\\TotemPWA.csproj",
+      "packagesPath": "C:\\Users\\Gabriel\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Gabriel\\Desktop\\totem1\\TotemPWa2\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Pedro\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Gabriel\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
