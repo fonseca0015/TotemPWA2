@@ -7,8 +7,8 @@ body {
 
 .containerTelaInicial {
     background-color: #990000;
-    width: 25vw;
-    height: 95vh;
+    width: 30vw;
+    height: 100vh;
     justify-content: center;
     align-items: center;
     display: flex;
@@ -33,6 +33,7 @@ body {
 
 
 .botao {
+    position: relative;
     background-color: #F7F7CF;
     color: #990000;
     width: 350px;

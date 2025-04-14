@@ -18,3 +18,11 @@ function abrirModalPersonalizar(nome) {
       if (novo >= 0 && novo <= 3) span.innerText = novo;
     }
   }
+  function adicionarItem(qnt,id){
+    
+    let atual = parseInt(document.getElementById(id).innerText);
+    atual += qnt;
+    if(atual < 0) {atual = 0;}
+    document.getElementById(id).innerHTML = atual;
+
+  }

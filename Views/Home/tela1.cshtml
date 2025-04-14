@@ -11,8 +11,8 @@
     <script src="~/js/modal.js"></script>
     <title>Pedidos</title>
 </head>
-<body>
-
+<body >
+<div class="wrapper">
     <div class="containerPedidos">
         <img src="~/imgs/imgHeader.jpeg" alt="Header" class="imgHeader">
         <div class="conteudoInterno">
@@ -45,59 +45,50 @@
 
             <div class="conteudoPrincipal">
                 <div class="quadradoLanches">
-                    <div class="quadradoLanche1" onclick="abrirModal('Burguer 404', 'R$24,90', 'Pão brioche, queijo cheddar derretido, hambúrguer de costela 180g...', '/imgs/lanche1.png')">
+                    <div class="quadradoLanche" onclick="abrirModal('Burguer 404', 'R$24,90', 'Pão brioche, queijo cheddar derretido, hambúrguer de costela 180g...', '/imgs/lanche1.png')">
                         <img src="~/imgs/lanche1.png" alt="" class="lanchesFotos">
                         <p class="textoLanche1">Burguer 404</p>
                         <p class="preçoLanche1">R$24,90</p>
-                        <p class="descLanche1">Pão brioche, queijo cheddar derretido, hambúrguer de costela 180g...</p>
                     </div>
-                    <div class="quadradoLanche2" onclick="abrirModal('Full Stack Burguer', 'R$29,90', 'Pão australiano, dois hambúrgueres artesanais 150g, molho especial ADS...', '/imgs/lanche2.png')">
+                    <div class="quadradoLanche" onclick="abrirModal('Full Stack Burguer', 'R$29,90', 'Pão australiano, dois hambúrgueres artesanais 150g, molho especial ADS...', '/imgs/lanche2.png')">
                         <img src="~/imgs/lanche2.png" alt="" class="lanchesFotos">
                         <p class="textoLanche1">Full Stack Burguer</p>
                         <p class="preçoLanche1">R$29,90</p>
-                        <p class="descLanche1">Pão australiano, dois hambúrgueres artesanais 150g, molho especial ADS...</p>
                     </div>
-                    <div class="quadradoLanche3" onclick="abrirModal('Looping Duplo', 'R$32,90', 'Pão brioche, dois hambúrgueres artesanais 150g, queijo cheddar, queijo prato...', '/imgs/lanche3.png')">
+                    <div class="quadradoLanche" onclick="abrirModal('Looping Duplo', 'R$32,90', 'Pão brioche, dois hambúrgueres artesanais 150g, queijo cheddar, queijo prato...', '/imgs/lanche3.png')">
                         <img src="~/imgs/lanche3.png" alt="" class="lanchesFotos">
                         <p class="textoLanche1">Looping Duplo</p>
                         <p class="preçoLanche1">R$32,90</p>
-                        <p class="descLanche1">Pão brioche, dois hambúrgueres artesanais 150g, queijo cheddar, queijo prato...</p>
                     </div>
-                    <div class="quadradoLanche4" onclick="abrirModal('Hello World Veggie', 'R$21,90', 'Pão de batata, hambúrguer de grão-de-bico e cogumelos, queijo vegano...', '/imgs/lanche4.png')">
+                    <div class="quadradoLanche" onclick="abrirModal('Hello World Veggie', 'R$21,90', 'Pão de batata, hambúrguer de grão-de-bico e cogumelos, queijo vegano...', '/imgs/lanche4.png')">
                         <img src="~/imgs/lanche4.png" alt="" class="lanchesFotos">
                         <p class="textoLanche1">Hello World Veggie</p>
                         <p class="preçoLanche1">R$21,90</p>
-                        <p class="descLanche1">Pão de batata, hambúrguer de grão-de-bico e cogumelos, queijo vegano...</p>
                     </div>
-                    <div class="quadradoLanche5" onclick="abrirModal('Backend Brisket', 'R$34,90', 'Pão de malte, brisket defumado 12h, queijo prato, cebola roxa marinada...', '/imgs/lanche5.png')">
+                    <div class="quadradoLanche" onclick="abrirModal('Backend Brisket', 'R$34,90', 'Pão de malte, brisket defumado 12h, queijo prato, cebola roxa marinada...', '/imgs/lanche5.png')">
                         <img src="~/imgs/lanche5.png" alt="" class="lanchesFotos">
                         <p class="textoLanche1">Backend Brisket</p>
                         <p class="preçoLanche1">R$34,90</p>
-                        <p class="descLanche1">Pão de malte, brisket defumado 12h, queijo prato, cebola roxa marinada...</p>
                     </div>
-                    <div class="quadradoLanche6" onclick="abrirModal('Frontend BBQ', 'R$23,90', 'Pão australiano, hambúrguer de fraldinha 150g, queijo gorgonzola...', '/imgs/lanche6.png')">
+                    <div class="quadradoLanche" onclick="abrirModal('Frontend BBQ', 'R$23,90', 'Pão australiano, hambúrguer de fraldinha 150g, queijo gorgonzola...', '/imgs/lanche6.png')">
                         <img src="~/imgs/lanche6.png" alt="" class="lancheFrontEnd">
                         <p class="textoLanche1">Frontend BBQ</p>
                         <p class="preçoLanche1">R$23,90</p>
-                        <p class="descLancheFrontEnd">Pão australiano, hambúrguer de fraldinha 150g, queijo gorgonzola...</p>
                     </div>
-                    <div class="quadradoLanche7" onclick="abrirModal('DevOps Bacon', 'R$26,90', 'Pão brioche tostado, hambúrguer de costela 180g, queijo prato, cebola roxa...', '/imgs/lanche7.png')">
+                    <div class="quadradoLanche" onclick="abrirModal('DevOps Bacon', 'R$26,90', 'Pão brioche tostado, hambúrguer de costela 180g, queijo prato, cebola roxa...', '/imgs/lanche7.png')">
                         <img src="~/imgs/lanche7.png" alt="" class="lanchesFotos">
                         <p class="textoLanche1">DevOps Bacon</p>
                         <p class="preçoLanche1">R$26,90</p>
-                        <p class="descLanche1">Pão brioche tostado, hambúrguer de costela 180g, queijo prato, cebola roxa...</p>
                     </div>
-                    <div class="quadradoLanche8" onclick="abrirModal('Byte Burger', 'R$19,90', 'Pão de batata, hambúrguer smash de fraldinha 120g, queijo cheddar...', '/imgs/lanche8.png')">
+                    <div class="quadradoLanche" onclick="abrirModal('Byte Burger', 'R$19,90', 'Pão de batata, hambúrguer smash de fraldinha 120g, queijo cheddar...', '/imgs/lanche8.png')">
                         <img src="~/imgs/lanche8.png" alt="" class="lanchesFotos">
                         <p class="textoLanche1">Byte Burger</p>
                         <p class="preçoLanche1">R$19,90</p>
-                        <p class="descLanche1">Pão de batata, hambúrguer smash de fraldinha 120g, queijo cheddar...</p>
                     </div>
-                    <div class="quadradoLanche9" onclick="abrirModal('Refatorado Melt', 'R$22,90', 'Pão brioche, hambúrguer de picanha 150g, queijo mussarela derretido...', '/imgs/lanche9.png')">
+                    <div class="quadradoLanche" onclick="abrirModal('Refatorado Melt', 'R$22,90', 'Pão brioche, hambúrguer de picanha 150g, queijo mussarela derretido...', '/imgs/lanche9.png')">
                         <img src="~/imgs/lanche9.png" alt="" class="lanchesFotos">
                         <p class="textoLanche1">Refatorado Melt</p>
                         <p class="preçoLanche1">R$22,90</p>
-                        <p class="descLanche1">Pão brioche, hambúrguer de picanha 150g, queijo mussarela derretido...</p>
                     </div>
                 </div>
             </div>
@@ -121,6 +112,10 @@
         <a class="botao-pronto" target="_blank" href="@Url.Action("Tela2", "Home")">Pronto!</a>
     </div>
 </div>
+</div>
+</body>
+
+<body>
 
 <div class="modal-overlay" id="modal">
     <div class="modal-content">
