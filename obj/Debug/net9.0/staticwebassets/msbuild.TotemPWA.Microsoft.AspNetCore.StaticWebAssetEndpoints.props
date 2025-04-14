@@ -384,17 +384,17 @@
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"vn513np9cd"},{"Name":"integrity","Value":"sha256-Fb6kpX46\u002Byy76L7JEpgKVrx1tKNwZw4QboR5M/iZUZo="},{"Name":"label","Value":"_content/TotemPWA/js/modal.js"}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"727"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022Fb6kpX46\u002Byy76L7JEpgKVrx1tKNwZw4QboR5M/iZUZo=\u0022"},{"Name":"Last-Modified","Value":"Mon, 14 Apr 2025 17:24:09 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/TotemPWA/js/modalPersonalizar.h4xn0865w5.js">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\modalPersonalizar.js'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"h4xn0865w5"},{"Name":"integrity","Value":"sha256-jzhkjON68EGse1wJ\u002BnL5qBxtrz7zV/OMzv1STYtlJTs="},{"Name":"label","Value":"_content/TotemPWA/js/modalPersonalizar.js"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"989"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022jzhkjON68EGse1wJ\u002BnL5qBxtrz7zV/OMzv1STYtlJTs=\u0022"},{"Name":"Last-Modified","Value":"Mon, 14 Apr 2025 18:25:01 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/TotemPWA/js/modalPersonalizar.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\modalPersonalizar.js'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-jzhkjON68EGse1wJ\u002BnL5qBxtrz7zV/OMzv1STYtlJTs="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"989"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022jzhkjON68EGse1wJ\u002BnL5qBxtrz7zV/OMzv1STYtlJTs=\u0022"},{"Name":"Last-Modified","Value":"Mon, 14 Apr 2025 18:25:01 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-eEIp\u002BokLtZ8AyQ7KpXtJhGH54xDayfCRyZk7yTHudig="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1302"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022eEIp\u002BokLtZ8AyQ7KpXtJhGH54xDayfCRyZk7yTHudig=\u0022"},{"Name":"Last-Modified","Value":"Mon, 14 Apr 2025 20:06:22 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/TotemPWA/js/modalPersonalizar.wmsipur1jl.js">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\modalPersonalizar.js'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"wmsipur1jl"},{"Name":"integrity","Value":"sha256-eEIp\u002BokLtZ8AyQ7KpXtJhGH54xDayfCRyZk7yTHudig="},{"Name":"label","Value":"_content/TotemPWA/js/modalPersonalizar.js"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1302"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022eEIp\u002BokLtZ8AyQ7KpXtJhGH54xDayfCRyZk7yTHudig=\u0022"},{"Name":"Last-Modified","Value":"Mon, 14 Apr 2025 20:06:22 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/TotemPWA/js/site.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\site.js'))</AssetFile>
