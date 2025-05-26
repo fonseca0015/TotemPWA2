@@ -588,8 +588,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>wmsipur1jl</Fingerprint>
-      <Integrity>eEIp+okLtZ8AyQ7KpXtJhGH54xDayfCRyZk7yTHudig=</Integrity>
+      <Fingerprint>6wz3jllds4</Fingerprint>
+      <Integrity>ijDlPX5GPLqvEPbODvCupBnOPXd+PQPun1PKKUWbHQU=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\modalPersonalizar.js'))</OriginalItemSpec>
