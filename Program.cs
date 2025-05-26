@@ -10,13 +10,11 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("SQLLiteConnection"))
 );
 
-var app = builder.Build();
-
-
-
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();  // Adiciona o Swagger
+
+var app = builder.Build();
 
 using (var scope = app.Services.CreateScope())
 {
@@ -24,10 +22,10 @@ using (var scope = app.Services.CreateScope())
     var context = services.GetRequiredService<ApplicationDbContext>();
 
     // Apaga o banco de dados completamente
-     //context.Database.EnsureDeleted(); builder.Services.AddDbContext
+    //context.Database.EnsureDeleted(); builder.Services.AddDbContext
 
     // Aplica as migrações do zero
-     context.Database.Migrate();       
+    //context.Database.Migrate();
 
     // Executa o Seed (inicialização de dados)
     await DbInitializer.InitializeAsync(context);
