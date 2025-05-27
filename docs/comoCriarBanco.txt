@@ -1,0 +1,17 @@
+atenção para voces poderem criar o banco pode ser que haja necessidade de alguns comandos
+
+para criar a migração :
+>dotnet ef migrations add nomeDaSuaMigração
+para remover uma migração 
+>dotnet ef migrations remove
+para iniciar os dados do Sqlite
+> dotnet ef database update
+
+
+se não está funcionado verifique se os pacotes estão assim
+    usando >dotnet list package
+   > microsoft.EntityFrameWorkCore             9.0.5        9.0.5    
+   > Microsoft.EntityFrameworkCore.Design      9.0.5        9.0.5    
+   > Microsoft.EntityFrameworkCore.Sqlite      9.0.5        9.0.5    
+   > Swashbuckle.AspNetCore                    8.1.2        8.1.2  
+   se continuar não funcionado tente pelo terminal do windows

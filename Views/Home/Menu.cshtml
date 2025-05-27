@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="~/css/stylePagina2.css">
     <script src="~/js/modal.js"></script>
     <title>Pedidos</title>
+
+    
 </head>
 <body >
 <div class="wrapper">
@@ -21,6 +23,12 @@
                     <img src="~/imgs/imgLancheCategoria.png" alt="" class="imgLancheCategoria">
                     <p class="textoCategoria">Lanches</p>
                 </div>
+
+                
+
+
+
+
                 <div class="quadradoCategoria">
                     <img src="~/imgs/imgCombosCategoria.png" alt="" class="imgCombosCategoria">
                     <p class="textoCategoria">Combos</p>
@@ -44,7 +52,15 @@
             </div>
 
             <div class="conteudoPrincipal">
+
                 <div class="quadradoLanches">
+                @foreach (var product in ViewBag.Products){
+                    <div class="quadradoLanche" onclick="abrirModal('Burguer 404', 'R$24,90', 'Pão brioche, queijo cheddar derretido, hambúrguer de costela 180g...', '/imgs/lanche1.png')">
+                        <img src="~/imgs/lanche1.png" alt="" class="lanchesFotos">
+                        <p class="textoLanche1">@product.name</p>
+                        <p class="preçoLanche1">R$24,90</p>
+                    </div>               
+                }
                     <div class="quadradoLanche" onclick="abrirModal('Burguer 404', 'R$24,90', 'Pão brioche, queijo cheddar derretido, hambúrguer de costela 180g...', '/imgs/lanche1.png')">
                         <img src="~/imgs/lanche1.png" alt="" class="lanchesFotos">
                         <p class="textoLanche1">Burguer 404</p>

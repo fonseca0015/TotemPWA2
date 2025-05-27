@@ -78,12 +78,12 @@ public class HomeController : Controller
         ViewBag.SubCategories = subcategories;
         ViewBag.Products = products;
 
-        // return View();
-        return Ok(new {
+        return View("Menu");
+        /*return Ok(new {
             rootCategories,
             subcategories,
         //     products
-        });
+        });*/
     }
     
 
