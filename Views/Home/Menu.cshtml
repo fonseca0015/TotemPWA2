@@ -19,93 +19,40 @@
         <img src="~/imgs/imgHeader.jpeg" alt="Header" class="imgHeader">
         <div class="conteudoInterno">
             <div class="colunaEsquerda">
-                <div class="quadradoCategoria">
-                    <img src="~/imgs/imgLancheCategoria.png" alt="" class="imgLancheCategoria">
-                    <p class="textoCategoria">Lanches</p>
-                </div>
-
-                
-
-
-
-
-                <div class="quadradoCategoria">
-                    <img src="~/imgs/imgCombosCategoria.png" alt="" class="imgCombosCategoria">
-                    <p class="textoCategoria">Combos</p>
-                </div>
-                <div class="quadradoCategoria">
-                    <img src="~/imgs/imgSobremesasCategorias.png" alt="" class="imgSobremesasCategoria">
-                    <p class="textoCategoria">Sobremesas</p>
-                </div>
-                <div class="quadradoCategoria">
-                    <img src="~/imgs/imgBebidasCategoria.png" alt="" class="imgBebidasCategoria">
-                    <p class="textoCategoria">Bebidas</p>
-                </div>
-                <div class="quadradoCategoria">
-                    <img src="~/imgs/imgExtraCategoria.png" alt="" class="imgExtraCategoria">
-                    <p class="textoCategoria">Extras</p>
-                </div>
-                <div class="quadradoCategoria">
-                    <img src="~/imgs/imgMolhosCategoria.png" alt="" class="imgMolhosCategoria">
-                    <p class="textoCategoria">Molhos</p>
-                </div>
+             @foreach (var category in ViewBag.Categories)
+            {
+                string activeClass = category.active ? "active" : "";
+                <a  href="/Menu/@category.id">
+                    <div class="quadradoCategoria  @activeClass">
+                        <img src="@category.icon" alt="" class="imgLancheCategoria"><!-- adicionar os links -->
+                        <p class="textoCategoria">@category.name</p>
+                    </div>
+                </a>
+            }
             </div>
 
             <div class="conteudoPrincipal">
 
+                <div class="scrollmenu">
+                    @foreach (var subcategory in ViewBag.SubCategories)
+                    {   
+                        string activeClass = subcategory.active ? "active" : "";
+                        <a href="/Menu/@ViewBag.Category/@subcategory.id" class="subcategory-btn @activeClass">
+                            <span class="label">@subcategory.name,</span>
+                        </a>
+                    }
+                </div>
+
+
+
                 <div class="quadradoLanches">
                 @foreach (var product in ViewBag.Products){
-                    <div class="quadradoLanche" onclick="abrirModal('Burguer 404', 'R$24,90', 'Pão brioche, queijo cheddar derretido, hambúrguer de costela 180g...', '/imgs/lanche1.png')">
+                    <div class="quadradoLanche" onclick="abrirModal('@product.name', '@product.price', 'adicionar img e descrição no banco ;-;', '/imgs/lanche1.png')">
                         <img src="~/imgs/lanche1.png" alt="" class="lanchesFotos">
                         <p class="textoLanche1">@product.name</p>
-                        <p class="preçoLanche1">R$24,90</p>
+                        <p class="preçoLanche1">@product.price.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("pt-BR"))</p>
                     </div>               
                 }
-                    <div class="quadradoLanche" onclick="abrirModal('Burguer 404', 'R$24,90', 'Pão brioche, queijo cheddar derretido, hambúrguer de costela 180g...', '/imgs/lanche1.png')">
-                        <img src="~/imgs/lanche1.png" alt="" class="lanchesFotos">
-                        <p class="textoLanche1">Burguer 404</p>
-                        <p class="preçoLanche1">R$24,90</p>
-                    </div>
-                    <div class="quadradoLanche" onclick="abrirModal('Full Stack Burguer', 'R$29,90', 'Pão australiano, dois hambúrgueres artesanais 150g, molho especial ADS...', '/imgs/lanche2.png')">
-                        <img src="~/imgs/lanche2.png" alt="" class="lanchesFotos">
-                        <p class="textoLanche1">Full Stack Burguer</p>
-                        <p class="preçoLanche1">R$29,90</p>
-                    </div>
-                    <div class="quadradoLanche" onclick="abrirModal('Looping Duplo', 'R$32,90', 'Pão brioche, dois hambúrgueres artesanais 150g, queijo cheddar, queijo prato...', '/imgs/lanche3.png')">
-                        <img src="~/imgs/lanche3.png" alt="" class="lanchesFotos">
-                        <p class="textoLanche1">Looping Duplo</p>
-                        <p class="preçoLanche1">R$32,90</p>
-                    </div>
-                    <div class="quadradoLanche" onclick="abrirModal('Hello World Veggie', 'R$21,90', 'Pão de batata, hambúrguer de grão-de-bico e cogumelos, queijo vegano...', '/imgs/lanche4.png')">
-                        <img src="~/imgs/lanche4.png" alt="" class="lanchesFotos">
-                        <p class="textoLanche1">Hello World Veggie</p>
-                        <p class="preçoLanche1">R$21,90</p>
-                    </div>
-                    <div class="quadradoLanche" onclick="abrirModal('Backend Brisket', 'R$34,90', 'Pão de malte, brisket defumado 12h, queijo prato, cebola roxa marinada...', '/imgs/lanche5.png')">
-                        <img src="~/imgs/lanche5.png" alt="" class="lanchesFotos">
-                        <p class="textoLanche1">Backend Brisket</p>
-                        <p class="preçoLanche1">R$34,90</p>
-                    </div>
-                    <div class="quadradoLanche" onclick="abrirModal('Frontend BBQ', 'R$23,90', 'Pão australiano, hambúrguer de fraldinha 150g, queijo gorgonzola...', '/imgs/lanche6.png')">
-                        <img src="~/imgs/lanche6.png" alt="" class="lancheFrontEnd">
-                        <p class="textoLanche1">Frontend BBQ</p>
-                        <p class="preçoLanche1">R$23,90</p>
-                    </div>
-                    <div class="quadradoLanche" onclick="abrirModal('DevOps Bacon', 'R$26,90', 'Pão brioche tostado, hambúrguer de costela 180g, queijo prato, cebola roxa...', '/imgs/lanche7.png')">
-                        <img src="~/imgs/lanche7.png" alt="" class="lanchesFotos">
-                        <p class="textoLanche1">DevOps Bacon</p>
-                        <p class="preçoLanche1">R$26,90</p>
-                    </div>
-                    <div class="quadradoLanche" onclick="abrirModal('Byte Burger', 'R$19,90', 'Pão de batata, hambúrguer smash de fraldinha 120g, queijo cheddar...', '/imgs/lanche8.png')">
-                        <img src="~/imgs/lanche8.png" alt="" class="lanchesFotos">
-                        <p class="textoLanche1">Byte Burger</p>
-                        <p class="preçoLanche1">R$19,90</p>
-                    </div>
-                    <div class="quadradoLanche" onclick="abrirModal('Refatorado Melt', 'R$22,90', 'Pão brioche, hambúrguer de picanha 150g, queijo mussarela derretido...', '/imgs/lanche9.png')">
-                        <img src="~/imgs/lanche9.png" alt="" class="lanchesFotos">
-                        <p class="textoLanche1">Refatorado Melt</p>
-                        <p class="preçoLanche1">R$22,90</p>
-                    </div>
                 </div>
             </div>
         </div>

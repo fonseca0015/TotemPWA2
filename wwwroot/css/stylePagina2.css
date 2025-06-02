@@ -193,11 +193,7 @@
 
 }
 
-.imgLancheCategoria,
-.imgSobremesasCategoria,
-.imgBebidasCategoria,
-.imgExtraCategoria,
-.imgMolhosCategoria {
+.imgLancheCategoria{
     height: 50px;
     width: auto;
     max-width: 70px;
@@ -332,3 +328,21 @@
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
   }
+  .scrollmenu{
+  }
+/* removendo estilos chatos do a*/
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
+}
