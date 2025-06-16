@@ -1,10 +1,24 @@
+<button class="btn btn-success" asp-action="Create"> adicionar categoria</button>
+<br/>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Nome</th>
+      <th scope="col">Slug</th>
+      <th scope="col">icone</th>
+      <th scope="col">categoria pai</th>
+      <th scope="col"> ações</th>
+    </tr>
+  </thead>
+ <tbody>
+    
 @foreach (var item in Model)
         {
-            
-                @item.Name
-                
-                @item.Icon
-                @item.ParentCategory?.Name
-                
-                 <br/>
+            <tr scope="row">
+                <td>@item.Name</td>
+                <td>sem slug </td>
+                <td><img src="@item.Icon" ></td>
+                <td>@item.ParentCategory?.Name</td>
+                <td><button class="btn btn-warning" >editar</button> <button class="btn btn-outline-danger" >remover</button></td>
+            </tr>
         }
