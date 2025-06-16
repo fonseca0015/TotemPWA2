@@ -11,6 +11,7 @@ namespace TotemPWA.Data
 
         public DbSet<Category> Categories { get; set; }
         public DbSet<Product> Products { get; set; }
+        public DbSet<Combo_product> Combo_product {get;set;}
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -33,9 +34,19 @@ namespace TotemPWA.Data
             modelBuilder.Entity<Product>()
                 .Property(p => p.Price)
                 .HasColumnType("decimal(18,2)");
-
-
-                
+            // idk if this works
+            modelBuilder.Entity<Combo_product>()
+                .HasKey(co => new { co.comboId, co.productId });
+            modelBuilder.Entity<Combo_product>()
+                .HasOne(co => co.product)
+                .WithMany(p => p.InCombo)
+                .HasForeignKey(co => co.productId)
+                .OnDelete(DeleteBehavior.Restrict);
+            modelBuilder.Entity<Combo_product>()
+                .HasOne(co => co.combo)
+                .WithMany(p => p.Combo)
+                .HasForeignKey(co => co.comboId)
+                .OnDelete(DeleteBehavior.Restrict);
 
         }
     }

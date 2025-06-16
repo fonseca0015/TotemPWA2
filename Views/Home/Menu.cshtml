@@ -24,7 +24,7 @@
                 string activeClass = category.active ? "active" : "";
                 <a  href="/Menu/@category.id">
                     <div class="quadradoCategoria  @activeClass">
-                        <img src="@category.icon" alt="" class="imgLancheCategoria"><!-- adicionar os links -->
+                        <img src="@category.icon" alt="~imgs/imgLanche.png" class="imgLancheCategoria"><!-- adicionar os links -->
                         <p class="textoCategoria">@category.name</p>
                     </div>
                 </a>
@@ -82,7 +82,7 @@
 
 <div class="modal-overlay" id="modal">
     <div class="modal-content">
-        <button class="modal-close" onclick="fecharModal()">×</button>
+        <button class="modal-close" onclick="fecharModal()">X</button>
         <img id="modalImg" src="" alt="" />
         <h3 id="modalTitulo"></h3>
         <p class="modal-preco" id="modalPreco"></p>

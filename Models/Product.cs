@@ -10,9 +10,12 @@ namespace TotemPWA.Models
         public string? Image { get; set; }
 
         public int CategoryId { get; set; }
-        
+
         [JsonIgnore]
         public Category? Category { get; set; }
+
+        public ICollection<Combo_product> InCombo { get; set; }
+        public ICollection<Combo_product> Combo { get; set; }
     }
 }
 

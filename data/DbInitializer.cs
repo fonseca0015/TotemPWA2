@@ -54,7 +54,7 @@ namespace TotemPWA.Data
                 };
 
                 context.Products.Add(product);
-                await context.SaveChangesAsync(); 
+                await context.SaveChangesAsync();
             }
 
             // Recursivamente cria subcategorias
@@ -62,6 +62,9 @@ namespace TotemPWA.Data
             {
                 await CreateCategoryRecursiveAsync(context, subcategorySeed, category.Id);
             }
+            
+
+
         }
     }
 }
