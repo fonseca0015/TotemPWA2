@@ -1,0 +1,73 @@
+@{
+    ViewData["Title"] = "Tela3";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento - Fast Food Totem</title>
+    <link rel="stylesheet" href="~/css/stylePagina4.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header-pagamento-custom">
+            <h1 class="header-title">Detalhes Pagamento</h1>
+        </header>
+
+        <main class="secao-pagamento-custom">
+            <h2>Formas de Pagamento</h2>
+            <p class="subtitle">Como deseja pagar?</p>
+
+            <div class="formas-pagamento-grid-custom">
+                <button class="forma-pagamento-card-custom" data-metodo="debito">
+                    <i class="fa-solid fa-credit-card"></i>
+                    <span>Débito</span>
+                </button>
+                <button class="forma-pagamento-card-custom selected" data-metodo="credito">
+                    <i class="fa-solid fa-credit-card"></i>
+                    <span>Crédito</span>
+                </button>
+                <button class="forma-pagamento-card-custom" data-metodo="pix">
+                    <i class="fa-brands fa-pix"></i>
+                    <span>Pix</span>
+                </button>
+                <button class="forma-pagamento-card-custom" data-metodo="carteira-digital">
+                    <i class="fa-solid fa-wallet"></i>
+                    <span>Carteira Digital</span>
+                </button>
+            </div>
+        </main>
+
+        <footer class="rodape-pagamento-custom">
+            <button class="btn-voltar-custom">Voltar</button>
+            <span class="valor-total-custom">Valor : R$ 173,30</span>
+        </footer>
+    </div>
+
+    <script>
+        // Script simples para simular seleção e navegação
+        document.querySelectorAll('.forma-pagamento-card-custom').forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove a classe 'selected' de todos os botões
+                document.querySelectorAll('.forma-pagamento-card-custom').forEach(btn => {
+                    btn.classList.remove('selected');
+                });
+                // Adiciona a classe 'selected' apenas ao botão clicado
+                button.classList.add('selected');
+
+                const metodo = button.dataset.metodo;
+                // Aqui você adicionaria a lógica para a próxima etapa do pagamento (ex: QR code Pix, integração com POS, etc.)
+                console.log(`Método de pagamento selecionado: ${metodo}`);
+                // Em um totem real, isso levaria a uma nova tela para confirmar o pagamento
+            });
+        });
+
+        document.querySelector('.btn-voltar-custom').addEventListener('click', () => {
+            window.location.href = '@Url.Action("Tela2", "Home")'; // Volta para a tela anterior (carrinho)
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,225 @@
+/* stylePagina4.css - CSS para sua página de pagamento (Tela3) */
+
+/* Importação de fontes (exemplo: Google Fonts) */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+:root {
+    /* Cores */
+    --primary-color: #FFC107; /* Um amarelo/laranja para destaque */
+    --secondary-color: #4CAF50; /* Verde para sucesso/botões */
+    --accent-color: #E0E0E0; /* Cinza claro para fundos */
+    --dark-text: #333; /* Texto escuro */
+    --light-text: #FFF; /* Texto claro */
+    --red-button: #D32F2F; /* Vermelho para cancelar/voltar */
+    --border-color: #CCC; /* Cor da borda */
+}
+
+/* Reset básico e tipografia */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Copiado do CSS das outras telas: */
+body {
+    font-family: Arial, sans-serif; /* Usando Arial como nas outras telas */
+    background-color: #fafafa; /* Fundo cinza claro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 0; /* Removido para o wrapper ocupar 100% */
+    overflow: hidden; /* Adicionado para evitar scroll indesejado */
+    color: var(--dark-text); /* Mantendo a cor de texto padrão */
+}
+
+/* Copiado do CSS das outras telas: */
+.wrapper {
+    width: 25vw; /* Largura percentual, igual ao seu estilo da Tela2 */
+    height: 100vh; /* Ocupa a altura total da viewport */
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: 8px; /* Borda arredondada como nas outras telas */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Sombra como nas outras telas */
+}
+
+/* Copiado do CSS das outras telas, adaptado para o header da Tela3 */
+.header-pagamento-custom {
+    background-image: url("/imgs/imgHeader.jpeg"); /* Caminho da sua imagem de header */
+    height: 160px; /* Altura fixa */
+    background-size: cover;
+    background-position: center;
+    flex-shrink: 0; /* Garante que o header não encolha */
+    
+    /* Para posicionar o título no final do header */
+    display: flex;
+    align-items: flex-end; /* Alinha o título à parte inferior */
+    justify-content: center; /* Centraliza o título horizontalmente */
+    padding-bottom: 20px; /* Espaçamento abaixo do título */
+}
+
+.header-title {
+    margin: 0;
+    color: var(--light-text); /* Cor branca para o título, para contrastar com a imagem */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5); /* Sombra para melhorar leitura */
+    font-size: 1.5em; /* Tamanho do título */
+    font-weight: 700;
+}
+
+/* Copiado do CSS das outras telas: */
+.secao-pagamento-custom {
+    flex: 1; /* Ocupa o espaço restante disponível */
+    padding: 16px; /* Padding como nas outras telas */
+    overflow-y: scroll; /* Adiciona rolagem se o conteúdo for maior que a tela */
+}
+
+/* Copiado do CSS das outras telas: */
+.secao-pagamento-custom::-webkit-scrollbar {
+    width: 4px;
+}
+
+/* Copiado do CSS das outras telas: */
+.secao-pagamento-custom::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 4px;
+}
+
+/* Copiado do CSS das outras telas: */
+.secao-pagamento-custom h2 {
+    color: #456a2c;
+    font-size: 16px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 5px;
+    text-align: center; /* Mantendo o alinhamento central para o título "Formas de Pagamento" */
+}
+
+.secao-pagamento-custom .subtitle {
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.formas-pagamento-grid-custom {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* 2 colunas responsivas */
+    gap: 20px; /* Espaçamento entre os cartões */
+    justify-content: center;
+    align-items: stretch; /* Garante que todos os itens tenham a mesma altura */
+}
+
+.forma-pagamento-card-custom {
+    background-color: #f9f9f9;
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.1em;
+    font-weight: 500;
+    color: var(--dark-text);
+    text-decoration: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: #f9f9f9;
+}
+
+.forma-pagamento-card-custom:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.forma-pagamento-card-custom.selected {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.5);
+    background-color: #e8f5e9;
+}
+
+.forma-pagamento-card-custom i {
+    font-size: 3em;
+    color: var(--primary-color);
+}
+
+.forma-pagamento-card-custom.selected i {
+    color: var(--secondary-color);
+}
+
+/* Copiado do CSS das outras telas, adaptado para o rodapé da Tela3 */
+.rodape-pagamento-custom {
+    background-color: white; /* Cor de fundo branca como nas outras telas */
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); /* Sombra como nas outras telas */
+    padding: 10px 16px; /* Padding como nas outras telas */
+    flex-shrink: 0; /* Garante que o rodapé não encolha */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--dark-text); /* Cor de texto escura */
+    font-weight: bold; /* Deixando o texto do rodapé em negrito */
+    font-size: 14px; /* Tamanho da fonte como nas outras telas */
+}
+
+.rodape-pagamento-custom .btn-voltar-custom {
+    background-color: #c20000; /* Cor vermelha do cancelar da Tela2 */
+    color: white;
+    border: none;
+    border-radius: 25px; /* Botões mais arredondados */
+    padding: 10px 20px; /* Padding ajustado */
+    font-size: 14px; /* Tamanho da fonte como nas outras telas */
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.rodape-pagamento-custom .btn-voltar-custom:hover {
+    background-color: #a00000;
+    transform: translateY(-1px);
+}
+.rodape-pagamento-custom .btn-voltar-custom:active {
+    transform: translateY(0);
+}
+
+.rodape-pagamento-custom .valor-total-custom {
+    font-weight: 700;
+    font-size: 1.4em; /* Mantendo um tamanho maior para o valor total */
+    color: #333; /* Cor escura para o valor */
+}
+
+/* Responsividade básica (adaptada para o formato de totem) */
+@media (max-width: 600px) {
+    .wrapper {
+        width: 100vw; /* Em telas muito pequenas, ocupa toda a largura */
+        border-radius: 0; /* Remove bordas arredondadas em mobile */
+        box-shadow: none; /* Remove sombra em mobile */
+    }
+
+    .formas-pagamento-grid-custom {
+        grid-template-columns: 1fr; /* Uma coluna em telas muito pequenas */
+    }
+
+    .secao-pagamento-custom {
+        padding: 20px;
+    }
+
+    .rodape-pagamento-custom {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 20px;
+    }
+
+    .rodape-pagamento-custom .valor-total-custom {
+        margin-top: 10px;
+    }
+}

@@ -1,112 +1,335 @@
 @{
-    Layout = null;
+    ViewData["Title"] = "Resumo do Pedido"; // Um título mais descritivo
+    Layout = null; // Removendo o layout padrão para controle total do CSS
 }
 
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="~/css/stylePagina3.css">
-  <script src="~/js/modalPersonalizar.js"></script>
-  <title>Resumo do Pedido: </title
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/stylePagina3.css">
+    <title>Resumo do Pedido</title>
 </head>
 <body>
-  <div class="wrapper">
-    <div class="header"></div>
+    <div class="wrapper">
+        <div class="header"></div>
 
-    <div class="acoes-topo">
-      <a class="voltar" href="@Url.Action("Tela1", "Home")">&larr;</a>
-      <div class="cupom">INSIRA AQUI SEU CUPOM!</div>
+        <div class="acoes-topo">
+            <a class="voltar" href="@Url.Action("Menu")">&larr;</a>
+            <button class="cupom-button" onclick="abrirModalCupom()">INSIRA AQUI SEU CUPOM!</button>
+        </div>
+
+        <div class="secao">
+            <h2>LANCHES</h2>
+
+            <div class="card-item" id="Carditem1">
+                <div class="card-info">
+                    <img src="~/imgs/lanche1.png" alt="Burguer 404" class="lanchesFotos">
+                    <div class="card-texto">
+                        <h4>Burguer 404</h4>
+                        <p>Pão brioche, queijo cheddar derretido, hambúrguer de costela 180g...</p>
+                        <button class="modal-adicionar-carrinho" onclick="abrirModalPersonalizar('Burguer 404')">Personalizar</button>
+                    </div>
+                </div>
+                <div>
+                    <p class="card-preco" id="item1preco">R$49,80</p>
+                    <div class="quantidade-controle">
+                        <button class="btn-quantidade" onclick="adicionarItem(-1,'item1')">-</button>
+                        <span class="quantidade"id="item1">1</span>
+                        <button class="btn-quantidade" onclick="adicionarItem(1,'item1')">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <h2 style="margin-top: 20px;">COMBOS</h2>
+            <div class="card-item">
+                <div class="card-info">
+                    <img src="~/imgs/combo1.png" alt="Combo Completo" class="lanchesFotos">
+                    <div class="card-texto">
+                        <h4>Combo Completo</h4>
+                        <p>1 Burguer 404, 1 Batata Frita Grande, 1 Refrigerante</p>
+                    </div>
+                </div>
+                <div>
+                    <p class="card-preco" id="item3preco">R$65,00</p>
+                    <div class="quantidade-controle">
+                        <button class="btn-quantidade" onclick="adicionarItem(-1,'item3')">-</button>
+                        <span class="quantidade"id="item3">1</span>
+                        <button class="btn-quantidade" onclick="adicionarItem(1,'item3')">+</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card-item">
+                <div class="card-info">
+                    <img src="~/imgs/combo2.png" alt="Combo Família" class="lanchesFotos">
+                    <div class="card-texto">
+                        <h4>Combo Família</h4>
+                        <p>2 Burguer 404, 2 Batatas Fritas Grandes, 2 Milkshakes</p>
+                    </div>
+                </div>
+                <div>
+                    <p class="card-preco" id="item4preco">R$120,00</p>
+                    <div class="quantidade-controle">
+                        <button class="btn-quantidade" onclick="adicionarItem(-1,'item4')">-</button>
+                        <span class="quantidade"id="item4">1</span>
+                        <button class="btn-quantidade" onclick="adicionarItem(1,'item4')">+</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <h2 style="margin-top: 20px;">SOBREMESAS</h2>
+            <div class="card-item">
+                <div class="card-info">
+                    <img src="~/imgs/imgSobremesasCategorias.png" alt="Milkshake Overflow" class="lanchesFotos">
+                    <div class="card-texto">
+                        <h4>Milkshake Overflow</h4>
+                        <p>Milkshake de baunilha, calda de chocolate, chantilly...</p>
+                    </div>
+                </div>
+                <div>
+                    <p class="card-preco" id="item2preco">R$17,90</p><div class="quantidade-controle">
+                        <button class="btn-quantidade" onclick="adicionarItem(-1,'item2')">-</button>
+                        <span class="quantidade"id="item2">1</span>
+                        <button class="btn-quantidade" onclick="adicionarItem(1,'item2')">+</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="rodape">
+            <div class="barraContainer">
+                <div class="barraPreenchida"></div>
+            </div>
+            <div class="rodape-info">
+                <p>Total de itens: 10</p>
+                <p>Total do pedido: <span style="color: #42B61F; font-weight: bold; text-decoration: underline">R$ 312,90</span></p>
+            </div>
+            <div class="rodape-acoes">
+                <a class="btn-cancelar" href="@Url.Action("Menu", "Home")">Cancelar pedido</a>
+                <a class="btn-confirmar" href="@Url.Action("Tela3", "Home")">Confirmar pedido</a> 
+            </div>
+        </div>
     </div>
 
-    <div class="secao">
-      <h2>LANCHES</h2>
+    <div class="modal-overlay" id="modalPersonalizar">
+        <div class="modal-content">
+            <button class="modal-close" onclick="fecharModalPersonalizar()">&times;</button>
+            <h3 id="tituloModalPersonalizar"></h3>
 
-      <!-- Lanche com botão Personalizar -->
-      <div class="card-item" id="Carditem1">
-        <div class="card-info">
-          <img src="~/imgs/lanche1.png" alt="Burguer 404" class="lanchesFotos">
-          <div class="card-texto">
-            <h4>Burguer 404</h4>
-            <p>Pão brioche, queijo cheddar derretido, hambúrguer de costela 180g...</p>
-            <button class="modal-adicionar" onclick="abrirModalPersonalizar('Burguer 404')">Personalizar</button>
-          </div>
-        </div>
-        <div>
-          <p class="card-preco" id="item1preco">R$49,80</p>
-          <div class="quantidade-controle">
-            <button class="btn-quantidade" onclick="adicionarItem(-1,'item1')">-</button>
-            <span class="quantidade"id="item1">1</span>
-            <button class="btn-quantidade" onclick="adicionarItem(1,'item1')">+</button>
-          </div>
-        </div>
-      </div>
+            <div class="modal-group">
+                <strong>Hambúrguer (até 3):</strong>
+                <div class="modal-item-quantidade">
+                    <span class="label-item">Hambúrguer</span>
+                    <div>
+                        <button class="btn-quantidade-modal" onclick="alterarQtdExtra('hamburguer', -1)">-</button>
+                        <span class="quantidade-valor" id="qtdHamburguer">1</span>
+                        <button class="btn-quantidade-modal" onclick="alterarQtdExtra('hamburguer', 1)">+</button>
+                    </div>
+                </div>
+            </div>
 
-      <!-- Os outros lanches seguem o mesmo padrão com botão Personalizar -->
-      <!-- ... mantenha os demais lanches aqui como já estão ... -->
+            <div class="modal-group">
+                <strong>Adicionais:</strong>
+                <div class="modal-item-quantidade">
+                    <span class="label-item">Queijo adicional</span>
+                    <div>
+                        <button class="btn-quantidade-modal" onclick="alterarQtdExtra('queijo', -1)">-</button>
+                        <span class="quantidade-valor" id="qtdQueijo">0</span>
+                        <button class="btn-quantidade-modal" onclick="alterarQtdExtra('queijo', 1)">+</button>
+                    </div>
+                </div>
+                <div class="modal-item-quantidade" style="margin-top: 10px;">
+                    <span class="label-item">Bacon</span>
+                    <div>
+                        <button class="btn-quantidade-modal" onclick="alterarQtdExtra('bacon', -1)">-</button>
+                        <span class="quantidade-valor" id="qtdBacon">0</span>
+                        <button class="btn-quantidade-modal" onclick="alterarQtdExtra('bacon', 1)">+</button>
+                    </div>
+                </div>
+                <div class="modal-item-quantidade" style="margin-top: 10px;">
+                    <span class="label-item">Tomate</span>
+                    <div>
+                        <button class="btn-quantidade-modal" onclick="alterarQtdExtra('tomate', -1)">-</button>
+                        <span class="quantidade-valor" id="qtdTomate">0</span>
+                        <button class="btn-quantidade-modal" onclick="alterarQtdExtra('tomate', 1)">+</button>
+                    </div>
+                </div>
+                <div class="modal-item-quantidade" style="margin-top: 10px;">
+                    <span class="label-item">Alface</span>
+                    <div>
+                        <button class="btn-quantidade-modal" onclick="alterarQtdExtra('alface', -1)">-</button>
+                        <span class="quantidade-valor" id="qtdAlface">0</span>
+                        <button class="btn-quantidade-modal" onclick="alterarQtdExtra('alface', 1)">+</button>
+                    </div>
+                </div>
+                <div class="modal-item-quantidade" style="margin-top: 10px;">
+                    <span class="label-item">Cebola roxa</span>
+                    <div>
+                        <button class="btn-quantidade-modal" onclick="alterarQtdExtra('cebola', -1)">-</button>
+                        <span class="quantidade-valor" id="qtdCebola">0</span>
+                        <button class="btn-quantidade-modal" onclick="alterarQtdExtra('cebola', 1)">+</button>
+                    </div>
+                </div>
+                <div class="modal-item-quantidade" style="margin-top: 10px;">
+                    <span class="label-item">Catupiry</span>
+                    <div>
+                        <button class="btn-quantidade-modal" onclick="alterarQtdExtra('catupiry', -1)">-</button>
+                        <span class="quantidade-valor" id="qtdCatupiry">0</span>
+                        <button class="btn-quantidade-modal" onclick="alterarQtdExtra('catupiry', 1)">+</button>
+                    </div>
+                </div>
+            </div>
 
-      <h2>SOBREMESAS</h2>
-      <div class="card-item">
-        <div class="card-info">
-          <img src="~/imgs/imgSobremesasCategorias.png" alt="Milkshake Overflow" class="lanchesFotos">
-          <div class="card-texto">
-            <h4>Milkshake Overflow</h4>
-            <p>Milkshake de baunilha, calda de chocolate, chantilly...</p>
-          </div>
+            <button class="modal-adicionar" onclick="salvarPersonalizacao()">Salvar</button>
         </div>
-        <div>
-          <p class="card-preco" id="item2preco">R$17,90</p><!-- adicionar alteração dos ids com backend futuro-->
-          <div class="quantidade-controle">
-            <button class="btn-quantidade" onclick="adicionarItem(-1,'item2')">-</button>
-            <span class="quantidade"id="item2">1</span>
-            <button class="btn-quantidade" onclick="adicionarItem(1,'item2')">+</button>
-          </div>
-        </div>
-      </div>
     </div>
 
-    <div class="rodape">
-      <div class="barraContainer">
-        <div class="barraPreenchida"></div>
-      </div>
-      <div class="rodape-info">
-        <p>Total de itens: 10</p>
-        <p>Total do pedido: <span style="color: #42B61F; font-weight: bold; text-decoration: underline">R$ 312,90</span></p>
-      </div>
-      <div class="rodape-acoes">
-        <a class="btn-cancelar" href="@Url.Action("Tela1", "Home")">Cancelar pedido</a>
-        <button class="btn-confirmar">Confirmar pedido</button>
-      </div>
-    </div>
-  </div>
+    <div class="modal-overlay" id="modalCupom">
+        <div class="modal-content">
+            <button class="modal-close" onclick="fecharModalCupom()">&times;</button>
+            <h3>Insira seu Código de Cupom</h3>
+            <input type="text" id="cupomInput" readonly placeholder="Digite o cupom">
 
-  <!-- Modal de Personalização -->
-  <div class="modal-overlay" id="modalPersonalizar">
-    <div class="modal-content">
-      <button class="modal-close" onclick="fecharModalPersonalizar()">&times;</button>
-      <h3 id="tituloModalPersonalizar"></h3>
-
-      <div class="modal-group">
-        <label>Hambúrguer (até 3):</label>
-        <div class="modal-quantidade">
-          <button onclick="alterarQtdExtra('hamburguer', -1)">-</button>
-          <span id="qtdHamburguer">1</span>
-          <button onclick="alterarQtdExtra('hamburguer', 1)">+</button>
+            <div class="keyboard">
+                <button onclick="digitarCupom('1')">1</button>
+                <button onclick="digitarCupom('2')">2</button>
+                <button onclick="digitarCupom('3')">3</button>
+                <button onclick="digitarCupom('4')">4</button>
+                <button onclick="digitarCupom('5')">5</button>
+                <button onclick="digitarCupom('6')">6</button>
+                <button onclick="digitarCupom('7')">7</button>
+                <button onclick="digitarCupom('8')">8</button>
+                <button onclick="digitarCupom('9')">9</button>
+                <button onclick="digitarCupom('0')">0</button>
+                <button onclick="digitarCupom('DEL')">DEL</button>
+                <button class="long-button" onclick="aplicarCupom()">APLICAR CUPOM</button>
+            </div>
         </div>
-      </div>
-
-      <div class="modal-group">
-        <label><input type="checkbox" id="queijo"> Queijo adicional</label>
-        <label><input type="checkbox" id="bacon"> Bacon</label>
-        <label><input type="checkbox" id="tomate"> Tomate</label>
-        <label><input type="checkbox" id="alface"> Alface</label>
-        <label><input type="checkbox" id="cebola"> Cebola roxa</label>
-        <label><input type="checkbox" id="catupiry"> Catupiry</label>
-      </div>
-
-      <button class="modal-adicionar">Salvar</button>
     </div>
-  </div>
+
+    <script>
+        // Objeto para armazenar as quantidades dos ingredientes do modal atual
+        let ingredientesPersonalizados = {};
+
+        // Função para abrir o modal de personalização
+        function abrirModalPersonalizar(nomeLanche) {
+            document.getElementById('tituloModalPersonalizar').innerText = 'Personalizar ' + nomeLanche;
+            
+            // Resetar quantidades para o estado inicial ao abrir
+            ingredientesPersonalizados = {
+                hamburguer: 1, // Começa com 1 hambúrguer (o do lanche base)
+                queijo: 0,
+                bacon: 0,
+                tomate: 0,
+                alface: 0,
+                cebola: 0,
+                catupiry: 0
+                // Adicione outros ingredientes aqui com valor inicial 0
+            };
+            
+            // Atualizar o display de todas as quantidades no modal
+            atualizarDisplayIngredientes();
+
+            document.getElementById('modalPersonalizar').style.display = 'flex';
+        }
+
+        // Função para fechar o modal de personalização
+        function fecharModalPersonalizar() {
+            document.getElementById('modalPersonalizar').style.display = 'none';
+        }
+
+        // Função para alterar a quantidade de um ingrediente no modal
+        function alterarQtdExtra(ingrediente, valor) {
+            let quantidadeAtual = ingredientesPersonalizados[ingrediente];
+            let novaQuantidade = quantidadeAtual + valor;
+            
+            // Lógica de limites para cada ingrediente
+            if (ingrediente === 'hamburguer') {
+                if (novaQuantidade < 1) novaQuantidade = 1; // Mínimo de 1 hambúrguer (do lanche base)
+                if (novaQuantidade > 3) novaQuantidade = 3; // Máximo de 3 hambúrgueres
+            } else {
+                // Para os adicionais, mínimo de 0 e um máximo razoável (ex: 5 ou 10)
+                if (novaQuantidade < 0) novaQuantidade = 0; 
+                if (novaQuantidade > 5) { 
+                    novaQuantidade = 5; 
+                }
+            }
+
+            ingredientesPersonalizados[ingrediente] = novaQuantidade;
+            atualizarDisplayIngredientes(); // Chama para atualizar o número no HTML
+        }
+
+        // Função para atualizar os números exibidos no modal com base em ingredientesPersonalizados
+        function atualizarDisplayIngredientes() {
+            for (const ingrediente in ingredientesPersonalizados) {
+                // Constrói o ID do span dinamicamente (ex: "qtdHamburguer", "qtdQueijo")
+                const elementoSpanId = `qtd${ingrediente.charAt(0).toUpperCase() + ingrediente.slice(1)}`;
+                const elementoSpan = document.getElementById(elementoSpanId);
+                
+                if (elementoSpan) { // Verifica se o elemento existe no HTML
+                    elementoSpan.innerText = ingredientesPersonalizados[ingrediente];
+                }
+            }
+        }
+
+        // Função chamada ao clicar em "Salvar" no modal de personalização
+        function salvarPersonalizacao() {
+            let resumo = `Personalização do lanche "${document.getElementById('tituloModalPersonalizar').innerText.replace('Personalizar ', '')}":\n`;
+            for (const ingrediente in ingredientesPersonalizados) {
+                // Inclui apenas ingredientes com quantidade maior que 0, ou o hambúrguer base
+                if (ingredientesPersonalizados[ingrediente] > 0 || ingrediente === 'hamburguer') {
+                    resumo += `- ${ingrediente.charAt(0).toUpperCase() + ingrediente.slice(1)}: ${ingredientesPersonalizados[ingrediente]}\n`;
+                }
+            }
+            alert(resumo + "\nPersonalização salva! (Aqui você integraria com o carrinho/backend)");
+            fecharModalPersonalizar(); // Fecha o modal após "salvar"
+        }
+
+        // --- Funções para o Modal de Cupom ---
+        const modalCupom = document.getElementById('modalCupom');
+        const cupomInput = document.getElementById('cupomInput');
+
+        function abrirModalCupom() {
+          modalCupom.style.display = 'flex';
+          cupomInput.value = '';
+          cupomInput.focus();
+        }
+
+        function fecharModalCupom() {
+          modalCupom.style.display = 'none';
+        }
+
+        function digitarCupom(char) {
+            if (char === 'DEL') {
+                cupomInput.value = cupomInput.value.slice(0, -1);
+            } else if (cupomInput.value.length < 10) { // Limite de 10 caracteres para o cupom
+                cupomInput.value += char;
+            }
+        }
+
+        function aplicarCupom() {
+            const codigoCupom = cupomInput.value.trim();
+            if (codigoCupom) {
+                alert('Cupom "' + codigoCupom + '" aplicado! (Lógica de validação e aplicação virá no backend)');
+                fecharModalCupom();
+            } else {
+                alert('Por favor, digite um código de cupom.');
+            }
+        }
+
+        // --- Funções para controle de quantidade dos itens na página principal ---
+        function adicionarItem(valor, itemId) {
+            const spanQuantidade = document.getElementById(itemId);
+            let quantidadeAtual = parseInt(spanQuantidade.innerText);
+            let novaQuantidade = quantidadeAtual + valor;
+
+            if (novaQuantidade < 1) { // Garante que a quantidade mínima é 1
+                novaQuantidade = 1;
+            }
+            spanQuantidade.innerText = novaQuantidade;
+        }
+    </script>
 </body>
 </html>

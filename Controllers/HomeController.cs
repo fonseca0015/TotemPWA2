@@ -24,7 +24,6 @@ public class HomeController : Controller
     }
 
     [HttpGet("Menu/{categoryId:int?}/{subcategoryId:int?}")]
-    // [HttpGet]
     public async Task<IActionResult> Menu(int? categoryId, int? subcategoryId)
     {
         var rootCategoriesRaw = await _context.Categories
@@ -38,7 +37,6 @@ public class HomeController : Controller
             {
                 id = c.Id,
                 name = c.Name,
-                
                 icon = c.Icon,
                 active = c.Id == activeCategoryId
             })
@@ -57,7 +55,6 @@ public class HomeController : Controller
             {
                 id = c.Id,
                 name = c.Name,
-                
                 icon = c.Icon,
                 active = c.Id == activeSubcategoryId
             })
@@ -79,17 +76,24 @@ public class HomeController : Controller
         ViewBag.Products = products;
 
         return View("Menu");
-        /*return Ok(new {
-            rootCategories,
-            subcategories,
-        //     products
-        });*/
     }
-    
+
+
+    public IActionResult Tela2()
+    {
+        return View();
+    }
+
+    // Adicionado o método de ação para Tela3
+    public IActionResult Tela3()
+    {
+        return View();
+    }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
+    
 }

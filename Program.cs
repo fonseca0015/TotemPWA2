@@ -1,5 +1,10 @@
 using TotemPWA.Data;
 using Microsoft.EntityFrameworkCore;
+// using Microsoft.AspNetCore.Mvc; // Geralmente não é necessário aqui
+// using Microsoft.AspNetCore.Mvc.Rendering; // Geralmente não é necessário aqui
+using TotemPWA.Models; // Geralmente não é necessário aqui
+using TotemPWA.ViewModels; // Geralmente não é necessário aqui
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -12,7 +17,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 
 
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();  // Adiciona o Swagger
+builder.Services.AddSwaggerGen();  // Adiciona o Swagger
 
 var app = builder.Build();
 
@@ -40,22 +45,21 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+app.UseStaticFiles(); // Esta linha já é responsável por servir arquivos estáticos como CSS, JS, imagens, etc.
 
-
-
-app.UseSwagger();  // Habilita o Swagger
-app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "TotemPWA API v1"));  // Interface do Swagger
+app.UseSwagger();  // Habilita o Swagger
+app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "TotemPWA API v1"));  // Interface do Swagger
 
 app.UseHttpsRedirection();
 app.UseRouting();
 
 app.UseAuthorization();
 
-app.MapStaticAssets();
+// REMOVA ESTA LINHA: app.MapStaticAssets(); // Isso pode estar conflitando com o roteamento padrão
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}")
-    .WithStaticAssets();
+    pattern: "{controller=Home}/{action=Index}/{id?}");
+    // REMOVA ESTA LINHA: .WithStaticAssets(); // Isso também pode estar conflitando
 
 app.Run();
