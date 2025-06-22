@@ -8,8 +8,8 @@
   }
 
 .containerPedidos {
-    width: 60vh;
-    height: 100%;
+    width: 25vw;
+    height: 100vh;
     background-color: #fff;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     display: flex;
@@ -146,7 +146,7 @@
     padding: 20px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 15px;
 }
 
 .quadradoLanches {
@@ -162,6 +162,8 @@
 .quadradoLanche {
     height: 20vh;
     width: 7vw;
+    max-height: 180px;
+    max-width: 140px;
     background-color: #FAFAFA;
     border-radius: 8px;
     box-shadow: 10px 5px 50px rgba(0, 0, 0, 0.2);
@@ -183,6 +185,7 @@
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
     text-align: center;
     cursor: pointer;
+    max-width: 70px;
 }
 
 .textoCategoria {
@@ -201,8 +204,11 @@
 
 .lanchesFotos {
     height: 8vh;
-    width: 5vw;
+    width: 100%;
+    max-height: 90px;
     margin: 0;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0; /* Para ajustar com o card */
 }
 
 .lancheFrontEnd {
@@ -319,20 +325,43 @@
     margin-bottom: 10px;
   }
   .wrapper {
-    
+    width: 100vw;
     height: 100vh;
-    background-color: white;
     display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    justify-content: center;
+    align-items: center;
   }
   .scrollmenu{
+    white-space: nowrap;
+    overflow-x: auto;
+    padding-bottom: 10px;
   }
-/* removendo estilos chatos do a*/
+
+.subcategory-btn {
+    display: inline-block;
+    color: #333;
+    background-color: #f0f0f0;
+    padding: 8px 12px;
+    margin-right: 8px;
+    border-radius: 16px;
+    text-decoration: none;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.subcategory-btn:hover {
+    background-color: #e0e0e0;
+}
+
+.subcategory-btn.active {
+    background-color: #880202;
+    color: white;
+    border-color: #880202;
+}
+
 a:link {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 a:visited {

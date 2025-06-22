@@ -14,8 +14,8 @@ namespace TotemPWA.Models
         [JsonIgnore]
         public Category? Category { get; set; }
 
-        public ICollection<Combo_product> InCombo { get; set; }
-        public ICollection<Combo_product> Combo { get; set; }
+        public ICollection<Combo_product> InCombo { get; set; } = new List<Combo_product>();
+        public ICollection<Combo_product> Combo { get; set; } = new List<Combo_product>();
     }
 }
 

@@ -1467,4 +1467,4 @@ C:\Users\Pedro\OneDrive\Área de Trabalho\a\TotemPWA2\obj\Debug\net9.0\TotemPWA.
 C:\Users\Pedro\OneDrive\Área de Trabalho\a\TotemPWA2\obj\Debug\net9.0\TotemPWA.genruntimeconfig.cache
 C:\Users\Pedro\OneDrive\Área de Trabalho\a\TotemPWA2\obj\Debug\net9.0\ref\TotemPWA.dll
 C:\Users\Pedro\OneDrive\Área de Trabalho\a\TotemPWA2\obj\Debug\net9.0\compressed\44zl1togr2-hfsltllsnl.gz
-C:\Users\Pedro\OneDrive\Área de Trabalho\a\TotemPWA2\obj\Debug\net9.0\compressed\enxvb44kbb-kp9e03996d.gz
+C:\Users\Pedro\OneDrive\Área de Trabalho\a\TotemPWA2\obj\Debug\net9.0\compressed\enxvb44kbb-aay0dha77p.gz
