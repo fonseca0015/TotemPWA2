@@ -1,0 +1,2 @@
+da rollback no ultimo commit
+>git reset --hard HEAD~1 
