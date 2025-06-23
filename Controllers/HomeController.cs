@@ -70,7 +70,7 @@ public class HomeController : Controller
             })
             .ToListAsync();
 
-        ViewBag.Category = categoryId;
+        ViewBag.Category = activeCategoryId;
         ViewBag.Categories = rootCategories;
         ViewBag.SubCategories = subcategories;
         ViewBag.Products = products;

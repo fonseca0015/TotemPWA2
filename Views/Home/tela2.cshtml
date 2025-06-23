@@ -16,86 +16,12 @@
         <div class="header"></div>
 
         <div class="acoes-topo">
-            <a class="voltar" href="@Url.Action("Menu")">&larr;</a>
+            <a class="voltar" href="@Url.Action("Menu", "Home")">&larr;</a>
             <button class="cupom-button" onclick="abrirModalCupom()">INSIRA AQUI SEU CUPOM!</button>
         </div>
 
-        <div class="secao">
-            <h2>LANCHES</h2>
-
-            <div class="card-item" id="Carditem1">
-                <div class="card-info">
-                    <img src="~/imgs/lanche1.png" alt="Burguer 404" class="lanchesFotos">
-                    <div class="card-texto">
-                        <h4>Burguer 404</h4>
-                        <p>Pão brioche, queijo cheddar derretido, hambúrguer de costela 180g...</p>
-                        <button class="modal-adicionar-carrinho" onclick="abrirModalPersonalizar('Burguer 404')">Personalizar</button>
-                    </div>
-                </div>
-                <div>
-                    <p class="card-preco" id="item1preco">R$49,80</p>
-                    <div class="quantidade-controle">
-                        <button class="btn-quantidade" onclick="adicionarItem(-1,'item1')">-</button>
-                        <span class="quantidade"id="item1">1</span>
-                        <button class="btn-quantidade" onclick="adicionarItem(1,'item1')">+</button>
-                    </div>
-                </div>
-            </div>
-
-            <h2 style="margin-top: 20px;">COMBOS</h2>
-            <div class="card-item">
-                <div class="card-info">
-                    <img src="~/imgs/combo1.png" alt="Combo Completo" class="lanchesFotos">
-                    <div class="card-texto">
-                        <h4>Combo Completo</h4>
-                        <p>1 Burguer 404, 1 Batata Frita Grande, 1 Refrigerante</p>
-                    </div>
-                </div>
-                <div>
-                    <p class="card-preco" id="item3preco">R$65,00</p>
-                    <div class="quantidade-controle">
-                        <button class="btn-quantidade" onclick="adicionarItem(-1,'item3')">-</button>
-                        <span class="quantidade"id="item3">1</span>
-                        <button class="btn-quantidade" onclick="adicionarItem(1,'item3')">+</button>
-                    </div>
-                </div>
-            </div>
-            <div class="card-item">
-                <div class="card-info">
-                    <img src="~/imgs/combo2.png" alt="Combo Família" class="lanchesFotos">
-                    <div class="card-texto">
-                        <h4>Combo Família</h4>
-                        <p>2 Burguer 404, 2 Batatas Fritas Grandes, 2 Milkshakes</p>
-                    </div>
-                </div>
-                <div>
-                    <p class="card-preco" id="item4preco">R$120,00</p>
-                    <div class="quantidade-controle">
-                        <button class="btn-quantidade" onclick="adicionarItem(-1,'item4')">-</button>
-                        <span class="quantidade"id="item4">1</span>
-                        <button class="btn-quantidade" onclick="adicionarItem(1,'item4')">+</button>
-                    </div>
-                </div>
-            </div>
-
-
-            <h2 style="margin-top: 20px;">SOBREMESAS</h2>
-            <div class="card-item">
-                <div class="card-info">
-                    <img src="~/imgs/imgSobremesasCategorias.png" alt="Milkshake Overflow" class="lanchesFotos">
-                    <div class="card-texto">
-                        <h4>Milkshake Overflow</h4>
-                        <p>Milkshake de baunilha, calda de chocolate, chantilly...</p>
-                    </div>
-                </div>
-                <div>
-                    <p class="card-preco" id="item2preco">R$17,90</p><div class="quantidade-controle">
-                        <button class="btn-quantidade" onclick="adicionarItem(-1,'item2')">-</button>
-                        <span class="quantidade"id="item2">1</span>
-                        <button class="btn-quantidade" onclick="adicionarItem(1,'item2')">+</button>
-                    </div>
-                </div>
-            </div>
+        <div class="secao" id="cart-items-container">
+            <!-- Os itens do carrinho serão renderizados aqui pelo JavaScript -->
         </div>
 
         <div class="rodape">
@@ -103,8 +29,8 @@
                 <div class="barraPreenchida"></div>
             </div>
             <div class="rodape-info">
-                <p>Total de itens: 10</p>
-                <p>Total do pedido: <span style="color: #42B61F; font-weight: bold; text-decoration: underline">R$ 312,90</span></p>
+                <p>Total de itens: <span id="total-items-footer">0</span></p>
+                <p>Total do pedido: <span id="total-price-footer" style="color: #42B61F; font-weight: bold; text-decoration: underline">R$ 0,00</span></p>
             </div>
             <div class="rodape-acoes">
                 <a class="btn-cancelar" href="@Url.Action("Menu", "Home")">Cancelar pedido</a>
@@ -210,34 +136,113 @@
     </div>
 
     <script>
+        let currentEditingIndex = -1; // Variável para rastrear o item que está sendo editado
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderCart();
+        });
+
+        function getCart() {
+            return JSON.parse(sessionStorage.getItem('cart')) || [];
+        }
+
+        function saveCart(cart) {
+            sessionStorage.setItem('cart', JSON.stringify(cart));
+            renderCart();
+        }
+
+        function renderCart() {
+            const cart = getCart();
+            const container = document.getElementById('cart-items-container');
+            container.innerHTML = '<h2>SEU CARRINHO</h2>';
+
+            if (cart.length === 0) {
+                container.innerHTML += '<p>Seu carrinho está vazio.</p>';
+            } else {
+                cart.forEach((item, index) => {
+                    const itemTotal = item.price * item.quantity;
+                    const itemHtml = `
+                        <div class="card-item">
+                            <div class="card-info">
+                                <img src="${item.image}" alt="${item.name}" class="lanchesFotos">
+                                <div class="card-texto">
+                                    <h4>${item.name}</h4>
+                                    <p>${item.description}</p>
+                                     <div class="cart-item-actions">
+                                        <button class="personalizar-item-btn" onclick="abrirModalPersonalizar(${index})">Personalizar</button>
+                                        <button class="remover-item-btn" onclick="removeItem(${index})">Remover</button>
+                                     </div>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="card-preco">${itemTotal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</p>
+                                <div class="quantidade-controle">
+                                    <button class="btn-quantidade" onclick="changeQuantity(${index}, -1)">-</button>
+                                    <span class="quantidade">${item.quantity}</span>
+                                    <button class="btn-quantidade" onclick="changeQuantity(${index}, 1)">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    container.innerHTML += itemHtml;
+                });
+            }
+            updateTotals();
+        }
+
+        function changeQuantity(index, amount) {
+            let cart = getCart();
+            if (cart[index]) {
+                cart[index].quantity += amount;
+                if (cart[index].quantity <= 0) {
+                    cart.splice(index, 1); // Remove o item se a quantidade for 0 ou menor
+                }
+            }
+            saveCart(cart);
+        }
+
+        function removeItem(index) {
+            let cart = getCart();
+            cart.splice(index, 1);
+            saveCart(cart);
+        }
+
+        function updateTotals() {
+            const cart = getCart();
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+
+            document.getElementById('total-items-footer').innerText = totalItems;
+            document.getElementById('total-price-footer').innerText = totalPrice.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
+            // Atualiza o total no sessionStorage para ser usado em outras páginas
+            sessionStorage.setItem('cartTotal', totalPrice);
+        }
+
         // Objeto para armazenar as quantidades dos ingredientes do modal atual
         let ingredientesPersonalizados = {};
 
         // Função para abrir o modal de personalização
-        function abrirModalPersonalizar(nomeLanche) {
-            document.getElementById('tituloModalPersonalizar').innerText = 'Personalizar ' + nomeLanche;
-            
-            // Resetar quantidades para o estado inicial ao abrir
-            ingredientesPersonalizados = {
-                hamburguer: 1, // Começa com 1 hambúrguer (o do lanche base)
-                queijo: 0,
-                bacon: 0,
-                tomate: 0,
-                alface: 0,
-                cebola: 0,
-                catupiry: 0
-                // Adicione outros ingredientes aqui com valor inicial 0
-            };
-            
-            // Atualizar o display de todas as quantidades no modal
-            atualizarDisplayIngredientes();
+        function abrirModalPersonalizar(index) {
+            currentEditingIndex = index;
+            const cart = getCart();
+            const item = cart[index];
 
+            if (!item) return;
+
+            document.getElementById('tituloModalPersonalizar').innerText = 'Personalizar ' + item.name;
+            
+            // Carrega as personalizações atuais do item para o estado do modal
+            ingredientesPersonalizados = JSON.parse(JSON.stringify(item.customizations));
+            
+            atualizarDisplayIngredientes();
             document.getElementById('modalPersonalizar').style.display = 'flex';
         }
 
         // Função para fechar o modal de personalização
         function fecharModalPersonalizar() {
             document.getElementById('modalPersonalizar').style.display = 'none';
+            currentEditingIndex = -1; // Limpa o índice ao fechar
         }
 
         // Função para alterar a quantidade de um ingrediente no modal
@@ -245,46 +250,36 @@
             let quantidadeAtual = ingredientesPersonalizados[ingrediente];
             let novaQuantidade = quantidadeAtual + valor;
             
-            // Lógica de limites para cada ingrediente
             if (ingrediente === 'hamburguer') {
-                if (novaQuantidade < 1) novaQuantidade = 1; // Mínimo de 1 hambúrguer (do lanche base)
-                if (novaQuantidade > 3) novaQuantidade = 3; // Máximo de 3 hambúrgueres
+                if (novaQuantidade < 1) novaQuantidade = 1;
+                if (novaQuantidade > 3) novaQuantidade = 3;
             } else {
-                // Para os adicionais, mínimo de 0 e um máximo razoável (ex: 5 ou 10)
                 if (novaQuantidade < 0) novaQuantidade = 0; 
-                if (novaQuantidade > 5) { 
-                    novaQuantidade = 5; 
-                }
+                if (novaQuantidade > 5) novaQuantidade = 5; 
             }
 
             ingredientesPersonalizados[ingrediente] = novaQuantidade;
-            atualizarDisplayIngredientes(); // Chama para atualizar o número no HTML
+            atualizarDisplayIngredientes();
         }
 
-        // Função para atualizar os números exibidos no modal com base em ingredientesPersonalizados
         function atualizarDisplayIngredientes() {
             for (const ingrediente in ingredientesPersonalizados) {
-                // Constrói o ID do span dinamicamente (ex: "qtdHamburguer", "qtdQueijo")
                 const elementoSpanId = `qtd${ingrediente.charAt(0).toUpperCase() + ingrediente.slice(1)}`;
                 const elementoSpan = document.getElementById(elementoSpanId);
                 
-                if (elementoSpan) { // Verifica se o elemento existe no HTML
+                if (elementoSpan) {
                     elementoSpan.innerText = ingredientesPersonalizados[ingrediente];
                 }
             }
         }
 
-        // Função chamada ao clicar em "Salvar" no modal de personalização
         function salvarPersonalizacao() {
-            let resumo = `Personalização do lanche "${document.getElementById('tituloModalPersonalizar').innerText.replace('Personalizar ', '')}":\n`;
-            for (const ingrediente in ingredientesPersonalizados) {
-                // Inclui apenas ingredientes com quantidade maior que 0, ou o hambúrguer base
-                if (ingredientesPersonalizados[ingrediente] > 0 || ingrediente === 'hamburguer') {
-                    resumo += `- ${ingrediente.charAt(0).toUpperCase() + ingrediente.slice(1)}: ${ingredientesPersonalizados[ingrediente]}\n`;
-                }
+            if (currentEditingIndex > -1) {
+                let cart = getCart();
+                cart[currentEditingIndex].customizations = ingredientesPersonalizados;
+                saveCart(cart);
             }
-            alert(resumo + "\nPersonalização salva! (Aqui você integraria com o carrinho/backend)");
-            fecharModalPersonalizar(); // Fecha o modal após "salvar"
+            fecharModalPersonalizar();
         }
 
         // --- Funções para o Modal de Cupom ---
@@ -317,18 +312,6 @@
             } else {
                 alert('Por favor, digite um código de cupom.');
             }
-        }
-
-        // --- Funções para controle de quantidade dos itens na página principal ---
-        function adicionarItem(valor, itemId) {
-            const spanQuantidade = document.getElementById(itemId);
-            let quantidadeAtual = parseInt(spanQuantidade.innerText);
-            let novaQuantidade = quantidadeAtual + valor;
-
-            if (novaQuantidade < 1) { // Garante que a quantidade mínima é 1
-                novaQuantidade = 1;
-            }
-            spanQuantidade.innerText = novaQuantidade;
         }
     </script>
 </body>

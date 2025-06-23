@@ -23,14 +23,23 @@
             </div>
         </div>
         <footer class="footer-cpf">
-            <button class="back-btn">Voltar</button>
-            <span>Valor: R$173,30</span>
+            <button id="back-btn" class="back-btn">Voltar</button>
+            <span>Valor: <span id="total-value-cpf">R$ 0,00</span></span>
         </footer>
     </div>
 
     <script>
         document.getElementById('continue-to-final').addEventListener('click', function () {
             window.location.href = '@Url.Action("Final", "Home")';
+        });
+
+        document.getElementById('back-btn').addEventListener('click', function() {
+            window.location.href = '@Url.Action("Tela3", "Home")';
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const totalPrice = parseFloat(sessionStorage.getItem('cartTotal')) || 0;
+            document.getElementById('total-value-cpf').innerText = totalPrice.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
         });
     </script>
 </body>

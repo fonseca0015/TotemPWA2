@@ -47,7 +47,7 @@
 
                 <div class="quadradoLanches">
                 @foreach (var product in ViewBag.Products){
-                    <div class="quadradoLanche" onclick="abrirModal('@product.name', '@product.price', 'adicionar img e descrição no banco ;-;', '/imgs/lanche1.png')">
+                    <div class="quadradoLanche" onclick="abrirModal('@product.id', '@product.name', '@product.price', 'adicionar img e descrição no banco ;-;', '/imgs/lanche1.png')">
                         <img src="~/imgs/lanche1.png" alt="" class="lanchesFotos">
                         <p class="textoLanche1">@product.name</p>
                         <p class="preçoLanche1">@product.price.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("pt-BR"))</p>
@@ -59,8 +59,8 @@
 
 <div class="divResumoPedido">
     <div class="infoResumo">
-        <p class="textoResumo">Total de itens: <strong>0</strong></p>
-        <p class="textoResumo">Total do pedido: <span class="precoResumo">R$ 0</span></p>
+        <p class="textoResumo">Total de itens: <strong id="total-items">0</strong></p>
+        <p class="textoResumo">Total do pedido: <span class="precoResumo" id="total-price">R$ 0,00</span></p>
     </div>
 
     <div class="divCarrinho">
@@ -72,13 +72,10 @@
     </div>
 
     <div class="containerBotaoPronto">
-        <a class="botao-pronto" target="_blank" href="@Url.Action("Tela2", "Home")">Pronto!</a>
+        <a class="botao-pronto" href="@Url.Action("Tela2", "Home")">Pronto!</a>
     </div>
 </div>
 </div>
-</body>
-
-<body>
 
 <div class="modal-overlay" id="modal">
     <div class="modal-content">
@@ -92,8 +89,88 @@
             <button onclick="alterarQtd(1)">+</button>
         </div>
         <p id="modalDescricao"></p>
-        <button class="modal-adicionar">Adicionar</button>
+        <button class="modal-adicionar" onclick="adicionarAoCarrinho()">Adicionar</button>
     </div>
 </div>
+
+<script>
+    // Mantém o estado do modal
+    let currentProduct = {};
+
+    // Inicia ou carrega o carrinho do sessionStorage
+    let cart = JSON.parse(sessionStorage.getItem('cart')) || [];
+
+    function abrirModal(id, nome, preco, descricao, imagem) {
+        currentProduct = {
+            id: parseInt(id),
+            name: nome,
+            price: parseFloat(preco),
+            description: descricao,
+            image: imagem,
+            quantity: 1,
+            customizations: {
+                hamburguer: 1,
+                queijo: 0,
+                bacon: 0,
+                tomate: 0,
+                alface: 0,
+                cebola: 0,
+                catupiry: 0
+            }
+        };
+
+        document.getElementById('modalTitulo').innerText = currentProduct.name;
+        document.getElementById('modalPreco').innerText = `R$ ${currentProduct.price.toFixed(2)}`;
+        document.getElementById('modalDescricao').innerText = currentProduct.description;
+        document.getElementById('modalImg').src = currentProduct.image;
+        document.getElementById('modalQtd').innerText = currentProduct.quantity;
+        document.getElementById('modal').style.display = 'flex';
+    }
+
+    function fecharModal() {
+        document.getElementById('modal').style.display = 'none';
+        currentProduct = {}; // Limpa o produto atual
+    }
+
+    function alterarQtd(amount) {
+        const qtdSpan = document.getElementById('modalQtd');
+        let quantity = parseInt(qtdSpan.innerText) + amount;
+        if (quantity < 1) {
+            quantity = 1;
+        }
+        currentProduct.quantity = quantity;
+        qtdSpan.innerText = quantity;
+    }
+
+    function adicionarAoCarrinho() {
+        const existingProductIndex = cart.findIndex(item => item.id === currentProduct.id && JSON.stringify(item.customizations) === JSON.stringify(currentProduct.customizations));
+
+        if (existingProductIndex > -1) {
+            // Se o produto já existe, atualiza a quantidade
+            cart[existingProductIndex].quantity += currentProduct.quantity;
+        } else {
+            // Senão, adiciona o novo produto
+            cart.push(currentProduct);
+        }
+
+        // Salva o carrinho no sessionStorage
+        sessionStorage.setItem('cart', JSON.stringify(cart));
+        
+        // Atualiza a UI e fecha o modal
+        atualizarResumoPedido();
+        fecharModal();
+    }
+
+    function atualizarResumoPedido() {
+        const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+        const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+
+        document.getElementById('total-items').innerText = totalItems;
+        document.getElementById('total-price').innerText = totalPrice.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    }
+
+    // Garante que o resumo seja atualizado ao carregar a página
+    document.addEventListener('DOMContentLoaded', atualizarResumoPedido);
+</script>
 </body>
 </html>

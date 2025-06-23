@@ -37,7 +37,8 @@
 
         <footer class="rodape-pagamento-custom">
             <button class="btn-voltar-custom">Voltar</button>
-            <span class="valor-total-custom">Valor : R$ 173,30</span>
+            <span class="valor-total-custom">Valor : <span id="total-value">R$ 0,00</span></span>
+            <button class="btn-continuar-custom" style="display:none;">Continuar</button>
         </footer>
     </div>
 
@@ -110,6 +111,11 @@
 
         document.querySelector('.btn-continuar-modal-custom').addEventListener('click', () => {
             window.location.href = '@Url.Action("Cpf", "Home")'; 
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const totalPrice = parseFloat(sessionStorage.getItem('cartTotal')) || 0;
+            document.getElementById('total-value').innerText = totalPrice.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
         });
     </script>
 </body>
