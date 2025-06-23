@@ -1,0 +1,104 @@
+/* styles.css */
+
+/* Padrão de Estilo para o Corpo da Página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fafafa; /* Fundo cinza claro padrão */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+/* Padrão de Estilo para o Wrapper (Simulador de Totem) */
+.wrapper {
+    width: 25vw;
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.container-cpf {
+    flex: 1; /* Ocupa o espaço disponível */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.content-box {
+    background-color: white;
+    padding: 50px;
+    border-radius: 10px;
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.option input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.option label {
+    font-size: 18px;
+}
+
+.continue-btn {
+    background-color: #addc38;
+    color: white;
+    border: none;
+    padding: 15px 0;
+    font-size: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: bold;
+}
+
+.footer-cpf {
+    background-color: #8b0000;
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    height: 70px;
+}
+
+.back-btn {
+    background-color: white;
+    color: #8b0000;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.footer-cpf span {
+    font-size: 18px;
+    font-weight: bold;
+} 

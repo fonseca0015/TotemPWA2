@@ -1,5 +1,5 @@
 @{
-    ViewData["Title"] = "Tela3";
+    ViewData["Title"] = "Formas de Pagamento";
     Layout = null;
 }
 <!DOCTYPE html>
@@ -9,33 +9,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pagamento - Fast Food Totem</title>
     <link rel="stylesheet" href="~/css/stylePagina4.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="wrapper">
         <header class="header-pagamento-custom">
-            <h1 class="header-title">Detalhes Pagamento</h1>
+            <h1 class="header-title">Formas de Pagamento</h1>
         </header>
 
         <main class="secao-pagamento-custom">
-            <h2>Formas de Pagamento</h2>
             <p class="subtitle">Como deseja pagar?</p>
 
             <div class="formas-pagamento-grid-custom">
-                <button class="forma-pagamento-card-custom" data-metodo="debito">
-                    <i class="fa-solid fa-credit-card"></i>
-                    <span>Débito</span>
-                </button>
-                <button class="forma-pagamento-card-custom selected" data-metodo="credito">
-                    <i class="fa-solid fa-credit-card"></i>
+                <button class="forma-pagamento-card-custom" data-metodo="credito">
                     <span>Crédito</span>
                 </button>
+                <button class="forma-pagamento-card-custom" data-metodo="debito">
+                    <span>Débito</span>
+                </button>
                 <button class="forma-pagamento-card-custom" data-metodo="pix">
-                    <i class="fa-brands fa-pix"></i>
                     <span>Pix</span>
                 </button>
                 <button class="forma-pagamento-card-custom" data-metodo="carteira-digital">
-                    <i class="fa-solid fa-wallet"></i>
                     <span>Carteira Digital</span>
                 </button>
             </div>
@@ -47,26 +41,75 @@
         </footer>
     </div>
 
+    <!-- Modal Structure -->
+    <div id="payment-modal" class="modal-custom" style="display:none;">
+        <div class="modal-content-custom">
+            <span class="modal-close-custom">&times;</span>
+            <div id="modal-body-custom"></div>
+            <button class="btn-continuar-modal-custom">Continuar</button>
+        </div>
+    </div>
+    
+    <!-- Payment Content Templates -->
+    <div style="display: none;">
+        <div id="credito-content-template">
+            <h3>Pagamento com Cartão de Crédito</h3>
+            <p>Por favor, insira ou aproxime seu cartão na máquina de pagamento ao lado.</p>
+        </div>
+        <div id="debito-content-template">
+            <h3>Pagamento com Cartão de Débito</h3>
+            <p>Por favor, insira ou aproxime seu cartão na máquina de pagamento ao lado.</p>
+        </div>
+        <div id="pix-content-template">
+            <h3>Pagamento com Pix</h3>
+            <p>Escaneie o QR Code abaixo para pagar:</p>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://pix.example.com/cob/12345" alt="QR Code PIX" class="qr-code">
+        </div>
+        <div id="carteira-digital-content-template">
+            <h3>Pagamento com Carteira Digital</h3>
+            <p>Aproxime seu dispositivo ou selecione sua carteira:</p>
+            <div class="wallet-options">
+                <button class="wallet-btn">Apple Pay</button>
+                <button class="wallet-btn">Google Pay</button>
+                <button class="wallet-btn">Samsung Pay</button>
+            </div>
+        </div>
+    </div>
+
+
     <script>
-        // Script simples para simular seleção e navegação
+        const modal = document.getElementById('payment-modal');
+        const modalBody = document.getElementById('modal-body-custom');
+        const closeModal = document.querySelector('.modal-close-custom');
+
         document.querySelectorAll('.forma-pagamento-card-custom').forEach(button => {
             button.addEventListener('click', () => {
-                // Remove a classe 'selected' de todos os botões
-                document.querySelectorAll('.forma-pagamento-card-custom').forEach(btn => {
-                    btn.classList.remove('selected');
-                });
-                // Adiciona a classe 'selected' apenas ao botão clicado
-                button.classList.add('selected');
-
                 const metodo = button.dataset.metodo;
-                // Aqui você adicionaria a lógica para a próxima etapa do pagamento (ex: QR code Pix, integração com POS, etc.)
-                console.log(`Método de pagamento selecionado: ${metodo}`);
-                // Em um totem real, isso levaria a uma nova tela para confirmar o pagamento
+                const template = document.getElementById(metodo + '-content-template');
+                
+                if (template) {
+                    modalBody.innerHTML = template.innerHTML;
+                    modal.style.display = 'flex';
+                }
             });
         });
 
+        closeModal.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        window.addEventListener('click', (event) => {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        });
+        
         document.querySelector('.btn-voltar-custom').addEventListener('click', () => {
-            window.location.href = '@Url.Action("Tela2", "Home")'; // Volta para a tela anterior (carrinho)
+            window.location.href = '@Url.Action("Tela2", "Home")';
+        });
+
+        document.querySelector('.btn-continuar-modal-custom').addEventListener('click', () => {
+            window.location.href = '@Url.Action("Cpf", "Home")'; 
         });
     </script>
 </body>

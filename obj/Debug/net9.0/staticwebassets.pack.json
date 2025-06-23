@@ -25,6 +25,14 @@
       "PackagePath": "staticwebassets\\css\\stylePagina4.css"
     },
     {
+      "Id": "C:\\Users\\Pedro\\OneDrive\\Área de Trabalho\\a\\TotemPWA2\\wwwroot\\css\\stylePagina5.css",
+      "PackagePath": "staticwebassets\\css\\stylePagina5.css"
+    },
+    {
+      "Id": "C:\\Users\\Pedro\\OneDrive\\Área de Trabalho\\a\\TotemPWA2\\wwwroot\\css\\stylePagina6.css",
+      "PackagePath": "staticwebassets\\css\\stylePagina6.css"
+    },
+    {
       "Id": "C:\\Users\\Pedro\\OneDrive\\Área de Trabalho\\a\\TotemPWA2\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },

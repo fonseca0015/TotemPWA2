@@ -1385,7 +1385,6 @@ C:\Users\Pedro\OneDrive\Área de Trabalho\a\TotemPWA2\obj\Debug\net9.0\scopedcss
 C:\Users\Pedro\OneDrive\Área de Trabalho\a\TotemPWA2\obj\Debug\net9.0\scopedcss\projectbundle\TotemPWA.bundle.scp.css
 C:\Users\Pedro\OneDrive\Área de Trabalho\a\TotemPWA2\obj\Debug\net9.0\compressed\5x7mdqe4nv-b9sayid5wm.gz
 C:\Users\Pedro\OneDrive\Área de Trabalho\a\TotemPWA2\obj\Debug\net9.0\compressed\8voel94ewa-1u08o4r0rl.gz
-C:\Users\Pedro\OneDrive\Área de Trabalho\a\TotemPWA2\obj\Debug\net9.0\compressed\gtrgf87wf6-g8wbr5kt64.gz
 C:\Users\Pedro\OneDrive\Área de Trabalho\a\TotemPWA2\obj\Debug\net9.0\compressed\ade2i2q1em-61n19gt1b8.gz
 C:\Users\Pedro\OneDrive\Área de Trabalho\a\TotemPWA2\obj\Debug\net9.0\compressed\jouvgui3wh-vn513np9cd.gz
 C:\Users\Pedro\OneDrive\Área de Trabalho\a\TotemPWA2\obj\Debug\net9.0\compressed\3mi9kfqw3w-6wz3jllds4.gz
@@ -1467,4 +1466,7 @@ C:\Users\Pedro\OneDrive\Área de Trabalho\a\TotemPWA2\obj\Debug\net9.0\TotemPWA.
 C:\Users\Pedro\OneDrive\Área de Trabalho\a\TotemPWA2\obj\Debug\net9.0\TotemPWA.genruntimeconfig.cache
 C:\Users\Pedro\OneDrive\Área de Trabalho\a\TotemPWA2\obj\Debug\net9.0\ref\TotemPWA.dll
 C:\Users\Pedro\OneDrive\Área de Trabalho\a\TotemPWA2\obj\Debug\net9.0\compressed\44zl1togr2-hfsltllsnl.gz
-C:\Users\Pedro\OneDrive\Área de Trabalho\a\TotemPWA2\obj\Debug\net9.0\compressed\enxvb44kbb-aay0dha77p.gz
+C:\Users\Pedro\OneDrive\Área de Trabalho\a\TotemPWA2\obj\Debug\net9.0\compressed\gtrgf87wf6-cam50501xa.gz
+C:\Users\Pedro\OneDrive\Área de Trabalho\a\TotemPWA2\obj\Debug\net9.0\compressed\enxvb44kbb-223lfo3pnt.gz
+C:\Users\Pedro\OneDrive\Área de Trabalho\a\TotemPWA2\obj\Debug\net9.0\compressed\volfefclzc-ggp5gdox1v.gz
+C:\Users\Pedro\OneDrive\Área de Trabalho\a\TotemPWA2\obj\Debug\net9.0\compressed\4z0f5n5wd4-olj33xy811.gz

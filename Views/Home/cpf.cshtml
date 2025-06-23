@@ -1,0 +1,37 @@
+@{
+    ViewData["Title"] = "CPF na Nota";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/stylePagina5.css" />
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container-cpf">
+            <div class="content-box">
+                <p class="title">DESEJA CPF NA NOTA?</p>
+                <div class="option">
+                    <input type="checkbox" id="cpf" name="cpf" />
+                    <label for="cpf">Sim, Desejo incluir o CPF</label>
+                </div>
+                <button id="continue-to-final" class="continue-btn">Continuar</button>
+            </div>
+        </div>
+        <footer class="footer-cpf">
+            <button class="back-btn">Voltar</button>
+            <span>Valor: R$173,30</span>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('continue-to-final').addEventListener('click', function () {
+            window.location.href = '@Url.Action("Final", "Home")';
+        });
+    </script>
+</body>
+</html> 

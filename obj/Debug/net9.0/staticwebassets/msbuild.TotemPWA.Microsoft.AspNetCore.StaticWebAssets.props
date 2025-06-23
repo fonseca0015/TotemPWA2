@@ -48,8 +48,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>g8wbr5kt64</Fingerprint>
-      <Integrity>ENm9/9dkTpDrPgS1hL+xvhyO+npJ8QLur2jsnwNcv7o=</Integrity>
+      <Fingerprint>cam50501xa</Fingerprint>
+      <Integrity>7IuvcSf/FkfENy1hddZvzu2T0D9dI0Yb0jMYKtkEW7E=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\stylePagina2.css'))</OriginalItemSpec>
@@ -84,11 +84,47 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>aay0dha77p</Fingerprint>
-      <Integrity>buHXWWdvV/DOeBBaGPUaA8KdwQfLm4XpN/LhKgrcupE=</Integrity>
+      <Fingerprint>223lfo3pnt</Fingerprint>
+      <Integrity>ukHbxIjhyDJ79alOH8LdO6MjIxgJvih/f4hcM4IRHfY=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\stylePagina4.css'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\stylePagina5.css'))">
+      <SourceType>Package</SourceType>
+      <SourceId>TotemPWA</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/TotemPWA</BasePath>
+      <RelativePath>css/stylePagina5.css</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>ggp5gdox1v</Fingerprint>
+      <Integrity>IDR1A8moReIqaFYxqvHBq9hoz0Bfef3UXabIzcQrUIE=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\stylePagina5.css'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\stylePagina6.css'))">
+      <SourceType>Package</SourceType>
+      <SourceId>TotemPWA</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/TotemPWA</BasePath>
+      <RelativePath>css/stylePagina6.css</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>olj33xy811</Fingerprint>
+      <Integrity>/KwVp1+RvvV42ypKE9lUNpaaK9aOD4jojYBL9Vsc1UE=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\stylePagina6.css'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\favicon.ico'))">
       <SourceType>Package</SourceType>

@@ -1,0 +1,67 @@
+/* Padrão de Estilo para o Corpo da Página */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fafafa; /* Fundo cinza claro padrão */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+/* Padrão de Estilo para o Wrapper (Simulador de Totem) */
+.wrapper {
+    width: 25vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    /* Estilos específicos da tela final */
+    background-color: #b0d36f;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.final-container {
+    color: white;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.final-icon-container {
+    margin-bottom: 30px;
+}
+
+.final-icon {
+    font-size: 100px;
+}
+
+.final-title {
+    font-size: 3em;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.final-subtitle {
+    font-size: 1.5em;
+    line-height: 1.4;
+}
+
+.final-subtitle strong {
+    color: #800000;
+    font-weight: 700;
+} 
