@@ -19,6 +19,38 @@
                     <input type="checkbox" id="cpf" name="cpf" />
                     <label for="cpf">Sim, Desejo incluir o CPF</label>
                 </div>
+                <!-- Modal CPF -->
+                <div id="cpfModal" class="modal" style="display:none;">
+                  <div class="modal-content">
+                    <span class="close" id="closeCpfModal">&times;</span>
+                    <h2>Digite o CPF</h2>
+                    <input type="tel" inputmode="numeric" id="cpfInput" maxlength="11" pattern="\d*" placeholder="Somente números" />
+                    <!-- Teclado Virtual Numérico -->
+                    <div id="virtualKeyboard" class="virtual-keyboard">
+                        <div class="vk-row">
+                            <button type="button" class="vk-btn">1</button>
+                            <button type="button" class="vk-btn">2</button>
+                            <button type="button" class="vk-btn">3</button>
+                        </div>
+                        <div class="vk-row">
+                            <button type="button" class="vk-btn">4</button>
+                            <button type="button" class="vk-btn">5</button>
+                            <button type="button" class="vk-btn">6</button>
+                        </div>
+                        <div class="vk-row">
+                            <button type="button" class="vk-btn">7</button>
+                            <button type="button" class="vk-btn">8</button>
+                            <button type="button" class="vk-btn">9</button>
+                        </div>
+                        <div class="vk-row">
+                            <button type="button" class="vk-btn" id="vk-clear">Limpar</button>
+                            <button type="button" class="vk-btn">0</button>
+                            <button type="button" class="vk-btn" id="vk-backspace">←</button>
+                        </div>
+                    </div>
+                    <button id="cpfOkBtn" class="continue-btn">OK</button>
+                  </div>
+                </div>
                 <button id="continue-to-final" class="continue-btn">Continuar</button>
             </div>
         </div>
@@ -40,6 +72,64 @@
         document.addEventListener('DOMContentLoaded', () => {
             const totalPrice = parseFloat(sessionStorage.getItem('cartTotal')) || 0;
             document.getElementById('total-value-cpf').innerText = totalPrice.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
+            // CPF Modal logic
+            const cpfCheckbox = document.getElementById('cpf');
+            const cpfModal = document.getElementById('cpfModal');
+            const closeCpfModal = document.getElementById('closeCpfModal');
+            const cpfInput = document.getElementById('cpfInput');
+            const cpfOkBtn = document.getElementById('cpfOkBtn');
+
+            cpfCheckbox.addEventListener('change', function() {
+                if (this.checked) {
+                    cpfModal.style.display = 'block';
+                    cpfInput.value = '';
+                    cpfInput.focus();
+                }
+            });
+
+            closeCpfModal.onclick = function() {
+                cpfModal.style.display = 'none';
+                cpfCheckbox.checked = false;
+            };
+
+            cpfOkBtn.onclick = function() {
+                if (cpfInput.value.length === 11 && /^\d+$/.test(cpfInput.value)) {
+                    cpfModal.style.display = 'none';
+                    // Aqui você pode salvar o CPF ou enviar para o backend
+                } else {
+                    alert('Digite um CPF válido com 11 números.');
+                    cpfInput.focus();
+                }
+            };
+
+            cpfInput.addEventListener('input', function() {
+                this.value = this.value.replace(/\D/g, '').slice(0, 11);
+            });
+
+            window.onclick = function(event) {
+                if (event.target == cpfModal) {
+                    cpfModal.style.display = 'none';
+                    cpfCheckbox.checked = false;
+                }
+            };
+
+            // Teclado Virtual Numérico
+            const vkButtons = document.querySelectorAll('.vk-btn');
+            vkButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    if (this.id === 'vk-backspace') {
+                        cpfInput.value = cpfInput.value.slice(0, -1);
+                    } else if (this.id === 'vk-clear') {
+                        cpfInput.value = '';
+                    } else {
+                        if (cpfInput.value.length < 11) {
+                            cpfInput.value += this.textContent;
+                        }
+                    }
+                    cpfInput.focus();
+                });
+            });
         });
     </script>
 </body>

@@ -101,4 +101,108 @@ body {
 .footer-cpf span {
     font-size: 18px;
     font-weight: bold;
+}
+
+/* Modal CPF */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0; top: 0; width: 100vw; height: 100vh;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+}
+.modal-content {
+  background-color: #fff;
+  margin: 20vh auto;
+  padding: 30px 20px 20px 20px;
+  border: 1px solid #888;
+  width: 90%;
+  max-width: 350px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  position: relative;
+}
+.close {
+  color: #aaa;
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+#cpfInput {
+  width: 90%;
+  padding: 12px;
+  font-size: 18px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 18px;
+  margin-top: 10px;
+  text-align: center;
+}
+#cpfOkBtn {
+  background-color: #addc38;
+  color: white;
+  border: none;
+  padding: 12px 0;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  font-weight: bold;
+}
+
+/* Teclado Virtual Numérico */
+.virtual-keyboard {
+  margin: 24px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  user-select: none;
+}
+.vk-row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+.vk-btn {
+  width: 100px;
+  height: 70px;
+  margin: 0 12px;
+  font-size: 32px;
+  border: none;
+  border-radius: 10px;
+  background: #f2f2f2;
+  color: #333;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+}
+.vk-btn:active {
+  background: #addc38;
+  color: #fff;
+}
+#vk-clear {
+  background: #ffdddd;
+  color: #a00;
+  font-size: 22px;
+  width: 100px;
+  height: 70px;
+}
+#vk-clear:active {
+  background: #ffaaaa;
+}
+#vk-backspace {
+  background: #eee;
+  color: #333;
+  font-size: 32px;
+  width: 100px;
+  height: 70px;
+}
+#vk-backspace:active {
+  background: #ccc;
 } 
