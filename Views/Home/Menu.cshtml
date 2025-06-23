@@ -47,7 +47,7 @@
 
                 <div class="quadradoLanches">
                 @foreach (var product in ViewBag.Products){
-                    <div class="quadradoLanche" onclick="abrirModal('@product.id', '@product.name', '@product.price', 'adicionar img e descrição no banco ;-;', '/imgs/lanche1.png')">
+                    <div class="quadradoLanche" onclick="abrirModal('@product.id', '@product.name', '@product.price', 'adicionar img e descrição no banco ', '/imgs/lanche1.png')">
                         <img src="~/imgs/lanche1.png" alt="" class="lanchesFotos">
                         <p class="textoLanche1">@product.name</p>
                         <p class="preçoLanche1">@product.price.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("pt-BR"))</p>

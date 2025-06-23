@@ -33,8 +33,8 @@
                 <p>Total do pedido: <span id="total-price-footer" style="color: #42B61F; font-weight: bold; text-decoration: underline">R$ 0,00</span></p>
             </div>
             <div class="rodape-acoes">
-                <a class="btn-cancelar" href="@Url.Action("Menu", "Home")">Cancelar pedido</a>
-                <a class="btn-confirmar" href="@Url.Action("Tela3", "Home")">Confirmar pedido</a> 
+                <a class="btn-cancelar" onclick="cancelaPedido()" href="@Url.Action("Menu", "Home")">Cancelar pedido</a>
+                <a class="btn-confirmar" id="botaoConfimar" href="@Url.Action("Tela3", "Home")">Confirmar pedido</a> 
             </div>
         </div>
     </div>
@@ -158,6 +158,7 @@
 
             if (cart.length === 0) {
                 container.innerHTML += '<p>Seu carrinho está vazio.</p>';
+                Document.getElementById("botaoConfimar").href=""; 
             } else {
                 cart.forEach((item, index) => {
                     const itemTotal = item.price * item.quantity;
@@ -206,7 +207,13 @@
             cart.splice(index, 1);
             saveCart(cart);
         }
+        function cancelaPedido(){
 
+            let cart = getCart();
+            cart.forEach((item) => {
+                removeItem(item.index)
+            })
+        }
         function updateTotals() {
             const cart = getCart();
             const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);

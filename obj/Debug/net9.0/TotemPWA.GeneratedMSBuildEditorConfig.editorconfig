@@ -17,65 +17,73 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = TotemPWA
 build_property.RootNamespace = TotemPWA
-build_property.ProjectDir = C:\Users\Pedro\OneDrive\Área de Trabalho\d\TotemPWA2\
+build_property.ProjectDir = C:\Users\Arthur\Desktop\TotemPWA2\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 9.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Pedro\OneDrive\Área de Trabalho\d\TotemPWA2
+build_property.MSBuildProjectDirectory = C:\Users\Arthur\Desktop\TotemPWA2
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/Pedro/OneDrive/Área de Trabalho/d/TotemPWA2/Views/Category/list.cshtml]
+[C:/Users/Arthur/Desktop/TotemPWA2/Views/Category/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Arthur/Desktop/TotemPWA2/Views/Category/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Arthur/Desktop/TotemPWA2/Views/Category/list.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcbGlzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Pedro/OneDrive/Área de Trabalho/d/TotemPWA2/Views/Home/cpf.cshtml]
+[C:/Users/Arthur/Desktop/TotemPWA2/Views/Home/cpf.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxjcGYuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Pedro/OneDrive/Área de Trabalho/d/TotemPWA2/Views/Home/final.cshtml]
+[C:/Users/Arthur/Desktop/TotemPWA2/Views/Home/final.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxmaW5hbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Pedro/OneDrive/Área de Trabalho/d/TotemPWA2/Views/Home/Index.cshtml]
+[C:/Users/Arthur/Desktop/TotemPWA2/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Pedro/OneDrive/Área de Trabalho/d/TotemPWA2/Views/Home/Menu.cshtml]
+[C:/Users/Arthur/Desktop/TotemPWA2/Views/Home/Menu.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxNZW51LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Pedro/OneDrive/Área de Trabalho/d/TotemPWA2/Views/Home/tela2.cshtml]
+[C:/Users/Arthur/Desktop/TotemPWA2/Views/Home/tela2.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVx0ZWxhMi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Pedro/OneDrive/Área de Trabalho/d/TotemPWA2/Views/Home/tela3.cshtml]
+[C:/Users/Arthur/Desktop/TotemPWA2/Views/Home/tela3.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVx0ZWxhMy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Pedro/OneDrive/Área de Trabalho/d/TotemPWA2/Views/Shared/Admin.cshtml]
+[C:/Users/Arthur/Desktop/TotemPWA2/Views/Shared/Admin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEFkbWluLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Pedro/OneDrive/Área de Trabalho/d/TotemPWA2/Views/Shared/Error.cshtml]
+[C:/Users/Arthur/Desktop/TotemPWA2/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Pedro/OneDrive/Área de Trabalho/d/TotemPWA2/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Arthur/Desktop/TotemPWA2/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Pedro/OneDrive/Área de Trabalho/d/TotemPWA2/Views/_ViewImports.cshtml]
+[C:/Users/Arthur/Desktop/TotemPWA2/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Pedro/OneDrive/Área de Trabalho/d/TotemPWA2/Views/_ViewStart.cshtml]
+[C:/Users/Arthur/Desktop/TotemPWA2/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Pedro/OneDrive/Área de Trabalho/d/TotemPWA2/Views/Shared/_Layout.cshtml]
+[C:/Users/Arthur/Desktop/TotemPWA2/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-8xtumb19yc

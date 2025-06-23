@@ -1,4 +1,4 @@
-<button class="btn btn-success" asp-action="Create"> adicionar categoria</button>
+<a role="button" class="btn btn-success" asp-action="Create"> adicionar categoria</a>
 <br/>
 <table class="table table-striped">
   <thead>
@@ -19,6 +19,9 @@
                 <td>sem slug </td>
                 <td><img src="@item.Icon" ></td>
                 <td>@item.ParentCategory?.Name</td>
-                <td><button class="btn btn-warning" >editar</button> <button class="btn btn-outline-danger" >remover</button></td>
+                <td>
+                  <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning">Editar</a> 
+                  <button class="btn btn-outline-danger" >remover</button>
+                </td>
             </tr>
         }
