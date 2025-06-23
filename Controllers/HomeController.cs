@@ -66,7 +66,8 @@ public class HomeController : Controller
             {
                 id = p.Id,
                 name = p.Name,
-                price = p.Price
+                price = p.Price,
+                image = p.Image
             })
             .ToListAsync();
 

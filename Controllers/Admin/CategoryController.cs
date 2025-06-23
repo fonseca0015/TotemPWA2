@@ -92,6 +92,25 @@ namespace TotemPWA.Controllers.Admin
 
             return View(viewModel);
         }
+        [HttpGet("{id}")]
+        public IActionResult Delete(int id)
+        {
+            var category = _context.Categories.Find(id);
+            if (category == null) return NotFound();
+
+            return View(category);
+        }
+
+        [HttpPost("{id}")]
+        public IActionResult ConfirmDelete(int id)
+        {
+            var category = _context.Categories.Find(id);
+            if (category == null) return NotFound();
+
+            _context.Categories.Remove(category);
+            _context.SaveChanges();
+            return RedirectToAction("List");
+        }
 
     }
 }
