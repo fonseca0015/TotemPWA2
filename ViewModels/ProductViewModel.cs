@@ -10,5 +10,11 @@ namespace TotemPWA.ViewModels
         public Product Product { get; set; }
         [ValidateNever]
         public List<SelectListItem> Categories { get; set; }
+
+        public ProductViewModel()
+        {
+            Product = new Product { Name = string.Empty };
+            Categories = new List<SelectListItem>();
+        }
     }
 }
