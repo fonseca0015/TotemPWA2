@@ -29,6 +29,8 @@ body {
     height: 160px;
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
     flex-shrink: 0;
 }
 

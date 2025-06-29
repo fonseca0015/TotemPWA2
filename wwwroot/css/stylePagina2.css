@@ -17,17 +17,7 @@
     position: relative;
 }
 
-.imgHeader {
-    position: sticky;
-    background-size: cover;
-    background-position: center;
-    height: 160px;
-    top: 0;
-    z-index: 10;
-}
-
 .divResumoPedido {
-
     background-color: #ffffff;
     box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.2);
     z-index: 10;
@@ -394,4 +384,14 @@ a:hover {
 
 a:active {
   text-decoration: none;
+}
+
+.header {
+    background-image: url("/imgs/imgHeader.jpeg");
+    height: 160px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    flex-shrink: 0;
 }

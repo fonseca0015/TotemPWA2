@@ -6,12 +6,12 @@ namespace TotemPWA.Models
         public int Id { get; set; }
 
         public int IngredientId { get; set; }
-        public Ingredient Ingredient { get; set; }
+        public Ingredient? Ingredient { get; set; }
 
         public int OrderItemId { get; set; }
-        public OrderItem OrderItem { get; set; }
+        public OrderItem? OrderItem { get; set; }
 
-        public string Type { get; set; } // adicionar ou remover
+        public string Type { get; set; } = string.Empty; // adicionar ou remover
     }
 
 }

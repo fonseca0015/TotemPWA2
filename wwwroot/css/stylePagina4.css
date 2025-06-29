@@ -47,26 +47,14 @@ body {
 }
 
 /* Copiado do CSS das outras telas, adaptado para o header da Tela3 */
-.header-pagamento-custom {
-    background-image: url("/imgs/imgHeader.jpeg"); /* Caminho da sua imagem de header */
-    height: 160px; /* Altura fixa */
+.header {
+    background-image: url("/imgs/imgHeader.jpeg");
+    height: 160px;
     background-size: cover;
     background-position: center;
-    flex-shrink: 0; /* Garante que o header não encolha */
-    
-    /* Para posicionar o título no final do header */
-    display: flex;
-    align-items: flex-end; /* Alinha o título à parte inferior */
-    justify-content: center; /* Centraliza o título horizontalmente */
-    padding-bottom: 20px; /* Espaçamento abaixo do título */
-}
-
-.header-title {
-    margin: 0;
-    color: var(--light-text); /* Cor branca para o título, para contrastar com a imagem */
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.5); /* Sombra para melhorar leitura */
-    font-size: 1.5em; /* Tamanho do título */
-    font-weight: 700;
+    background-repeat: no-repeat;
+    width: 100%;
+    flex-shrink: 0;
 }
 
 /* Copiado do CSS das outras telas: */
@@ -399,4 +387,21 @@ body {
     .rodape-pagamento-custom .valor-total-custom {
         margin-top: 10px;
     }
+}
+
+/* CSS específico para imagens dos lanches - copiado da tela2 para manter consistência */
+.card-info img {
+    width: 70px;
+    height: 70px;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.lanchesFotos {
+    width: 70px;
+    height: 70px;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
