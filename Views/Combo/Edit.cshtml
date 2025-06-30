@@ -1,0 +1,22 @@
+@model TotemPWA.Models.Combo
+
+@{
+    ViewData["Title"] = "Editar Combo";
+}
+
+<h1>Editar Combo</h1>
+<form asp-action="Edit">
+    <input type="hidden" asp-for="Id" />
+    <div class="form-group">
+        <label asp-for="ProductComboId">Combo</label>
+        <select asp-for="ProductComboId" asp-items="ViewBag.Products" class="form-control"></select>
+        <span asp-validation-for="ProductComboId" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ProductId">Produto</label>
+        <select asp-for="ProductId" asp-items="ViewBag.Products" class="form-control"></select>
+        <span asp-validation-for="ProductId" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+    <a asp-action="List" class="btn btn-secondary">Voltar</a>
+</form> 

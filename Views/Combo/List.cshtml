@@ -1,0 +1,30 @@
+@model IEnumerable<TotemPWA.ViewModels.ComboItemViewModel>
+
+@{
+    ViewData["Title"] = "Combos";
+}
+
+<h1>Combos</h1>
+<a asp-action="Create" class="btn btn-primary mb-3">Novo Combo</a>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Combo</th>
+            <th>Produto</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var combo in Model)
+        {
+            <tr>
+                <td>@combo.ProductComboName</td>
+                <td>@combo.ProductName</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@combo.Id" class="btn btn-sm btn-warning">Editar</a>
+                    <a asp-action="Delete" asp-route-id="@combo.Id" class="btn btn-sm btn-danger">Excluir</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table> 

@@ -1,0 +1,16 @@
+@model TotemPWA.ViewModels.ComboItemViewModel
+
+@{
+    ViewData["Title"] = "Excluir Combo";
+}
+
+<h1>Confirmar Exclusão</h1>
+<div>
+    <h4>Combo: <strong>@Model.ProductComboName</strong></h4>
+    <h4>Produto: <strong>@Model.ProductName</strong></h4>
+    <form asp-action="ConfirmDelete" asp-controller="Combo" asp-route-id="@Model.Id">
+        <input type="hidden" asp-for="Id" />
+        <button type="submit" class="btn btn-danger">Excluir</button>
+        <a asp-action="List" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div> 
