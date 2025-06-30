@@ -62,6 +62,9 @@
 
     <script>
         document.getElementById('continue-to-final').addEventListener('click', function () {
+            // Limpa o carrinho ao finalizar
+            sessionStorage.removeItem('cart');
+            sessionStorage.removeItem('cartTotal');
             window.location.href = '@Url.Action("Final", "Home")';
         });
 
