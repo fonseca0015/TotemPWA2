@@ -53,7 +53,7 @@
                         }
                         @foreach (var product in ViewBag.Products)
                         {
-                            <div class="quadradoLanche" onclick="abrirModal('@product.id', '@product.name', '@product.price', 'adicionar img e descrição no banco ', '@GetProductImage(product)')">
+                            <div class="quadradoLanche" onclick="abrirModal('@product.id', '@product.name', '@product.price', '­', '@GetProductImage(product)')">
                                 <img src="@GetProductImage(product)" class="lanchesFotos">
                                 <p class="textoLanche1">@product.name</p>
                                 @if (product.percentPromotion != null && product.percentPromotion > 0)
