@@ -25,6 +25,19 @@ namespace TotemPWA.Data
                 }
 
                 await context.SaveChangesAsync();
+
+                // Após criar produtos, criar promoção para 'C# Burger'
+                var csBurger = context.Products.FirstOrDefault(p => p.Name == "C# Burger");
+                if (csBurger != null && !context.Promotions.Any(p => p.ProductId == csBurger.Id))
+                {
+                    context.Promotions.Add(new Promotion
+                    {
+                        ProductId = csBurger.Id,
+                        Percent = 90.0m,
+                        ValidUntil = DateTime.Now.AddDays(30)
+                    });
+                    await context.SaveChangesAsync();
+                }
             }
         }
 

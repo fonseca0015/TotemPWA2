@@ -56,7 +56,18 @@
                             <div class="quadradoLanche" onclick="abrirModal('@product.id', '@product.name', '@product.price', 'adicionar img e descrição no banco ', '@GetProductImage(product)')">
                                 <img src="@GetProductImage(product)" class="lanchesFotos">
                                 <p class="textoLanche1">@product.name</p>
-                                <p class="preçoLanche1">@product.price.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("pt-BR"))</p>
+                                @if (product.percentPromotion != null && product.percentPromotion > 0)
+                                {
+                                    <p class="preçoLanche1">
+                                        <span style="color: #42B61F; font-weight: bold;">@(Convert.ToDecimal(product.price).ToString("C", System.Globalization.CultureInfo.GetCultureInfo("pt-BR")))</span>
+                                        <span style="text-decoration: line-through; color: #888; margin-left: 6px;">@(Convert.ToDecimal(product.priceOriginal).ToString("C", System.Globalization.CultureInfo.GetCultureInfo("pt-BR")))</span>
+                                        <span style="color: #e53935; font-size: 0.9em; margin-left: 4px;">-@product.percentPromotion% OFF</span>
+                                    </p>
+                                }
+                                else
+                                {
+                                    <p class="preçoLanche1">@(Convert.ToDecimal(product.price).ToString("C", System.Globalization.CultureInfo.GetCultureInfo("pt-BR")))</p>
+                                }
                             </div>
                         }
                     </div>

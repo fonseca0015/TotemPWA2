@@ -64,16 +64,29 @@ public class HomeController : Controller
             })
             .ToList();
 
-        var products = await _context.Products
+        // Buscar produtos normalmente
+        var productsRaw = await _context.Products
             .Where(p => p.CategoryId == activeSubcategoryId)
-            .Select(p => new
-            {
+            .ToListAsync();
+
+        // Buscar promoções válidas
+        var now = DateTime.Now;
+        var promotions = await _context.Promotions
+            .Where(p => p.ValidUntil >= now)
+            .ToListAsync();
+
+        // Merge em memória: associar promoções aos produtos
+        var products = productsRaw.Select(p => {
+            var promo = promotions.FirstOrDefault(pr => pr.ProductId == p.Id);
+            return new {
                 id = p.Id,
                 name = p.Name,
-                price = p.Price,
-                image = p.Image
-            })
-            .ToListAsync();
+                image = p.Image,
+                price = promo != null ? p.Price * (1 - (decimal)promo.Percent / 100) : p.Price,
+                priceOriginal = p.Price,
+                percentPromotion = promo?.Percent
+            };
+        }).ToList();
 
         // Buscar combos desta subcategoria
         var combos = await _context.Products
