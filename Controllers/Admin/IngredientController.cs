@@ -5,6 +5,7 @@ using TotemPWA.Models;
 
 namespace TotemPWA.Controllers.Admin
 {
+    // /Admin/Ingredient/List
     [Route("admin/[controller]/[action]")]
     public class IngredientController : Controller
     {

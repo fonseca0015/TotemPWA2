@@ -5,6 +5,8 @@ using TotemPWA.Models;
 
 namespace TotemPWA.Controllers.Admin
 {
+    // /Admin/Cupom/List
+    [Route("Admin/[controller]/[action]")]
     public class CupomController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -17,7 +19,7 @@ namespace TotemPWA.Controllers.Admin
         public async Task<IActionResult> List()
         {
             var cupons = await _context.Cupons.ToListAsync();
-            return View(cupons);
+            return View("~/Views/Cupom/List.cshtml", cupons);
         }
 
         public IActionResult Create()
