@@ -41,8 +41,8 @@
                     <div class="quadradoLanches">
                         @foreach (var product in ViewBag.Products)
                         {
-                            <div class="quadradoLanche" onclick="abrirModal('@product.id', '@product.name', '@product.price', 'adicionar img e descrição no banco ', '/imgs/lanche1.png')">
-                                <img src="@product.image" class="lanchesFotos">
+                            <div class="quadradoLanche" onclick="abrirModal('@product.id', '@product.name', '@product.price', 'adicionar img e descrição no banco ', '@GetProductImage(product)')">
+                                <img src="@GetProductImage(product)" class="lanchesFotos">
                                 <p class="textoLanche1">@product.name</p>
                                 <p class="preçoLanche1">@product.price.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("pt-BR"))</p>
                             </div>
@@ -152,3 +152,11 @@
     </script>
 </body>
 </html>
+
+@functions {
+    public string GetProductImage(dynamic product) {
+        var img = (string)product.image;
+        if (img.StartsWith("http")) return img;
+        return img.StartsWith("imgs/") ? Url.Content("~/" + img) : Url.Content("~/imgs/" + img);
+    }
+}
