@@ -28,6 +28,22 @@ build_property._RazorSourceGeneratorDebug =
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
+[C:/Users/Pedro/OneDrive/Área de Trabalho/a/TotemPWA2/Views/Aditional/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRpdGlvbmFsXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Pedro/OneDrive/Área de Trabalho/a/TotemPWA2/Views/Aditional/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRpdGlvbmFsXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Pedro/OneDrive/Área de Trabalho/a/TotemPWA2/Views/Aditional/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRpdGlvbmFsXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Pedro/OneDrive/Área de Trabalho/a/TotemPWA2/Views/Aditional/List.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRpdGlvbmFsXExpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Pedro/OneDrive/Área de Trabalho/a/TotemPWA2/Views/Category/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -42,6 +58,22 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Pedro/OneDrive/Área de Trabalho/a/TotemPWA2/Views/Category/list.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcbGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Pedro/OneDrive/Área de Trabalho/a/TotemPWA2/Views/Cliente/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Pedro/OneDrive/Área de Trabalho/a/TotemPWA2/Views/Cliente/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Pedro/OneDrive/Área de Trabalho/a/TotemPWA2/Views/Cliente/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Pedro/OneDrive/Área de Trabalho/a/TotemPWA2/Views/Cliente/List.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxMaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Pedro/OneDrive/Área de Trabalho/a/TotemPWA2/Views/Combo/Create.cshtml]

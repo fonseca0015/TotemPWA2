@@ -1,0 +1,30 @@
+@model IEnumerable<TotemPWA.ViewModels.AditionalItemViewModel>
+
+@{
+    ViewData["Title"] = "Adicionais";
+}
+
+<h1>Adicionais</h1>
+<a asp-action="Create" class="btn btn-primary mb-3">Novo Adicional</a>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Produto</th>
+            <th>Ingrediente</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ProductName</td>
+                <td>@item.IngredientName</td>
+                <td>
+                    <a asp-action="Edit" asp-route-productId="@item.ProductId" asp-route-ingredientId="@item.IngredientId" class="btn btn-sm btn-warning">Editar</a>
+                    <a asp-action="Delete" asp-route-productId="@item.ProductId" asp-route-ingredientId="@item.IngredientId" class="btn btn-sm btn-danger">Excluir</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table> 

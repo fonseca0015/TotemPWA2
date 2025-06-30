@@ -58,7 +58,7 @@ namespace TotemPWA.Controllers.Admin
                 ViewBag.Products = _context.Products.Select(p => new SelectListItem { Value = p.Id.ToString(), Text = p.Name }).ToList();
                 return View(combo ?? new Combo());
             }
-            _context.Combos.Add(combo);
+            _context.Combos.Add(combo!);
             await _context.SaveChangesAsync();
             return RedirectToAction("List");
         }
@@ -87,7 +87,7 @@ namespace TotemPWA.Controllers.Admin
                 return View(combo ?? new Combo());
             }
 
-            _context.Combos.Update(combo);
+            _context.Combos.Update(combo!);
             await _context.SaveChangesAsync();
             return RedirectToAction("List");
         }

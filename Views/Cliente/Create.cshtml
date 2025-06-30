@@ -1,0 +1,32 @@
+@model TotemPWA.Models.Client
+
+@{
+    ViewData["Title"] = "Novo Cliente";
+}
+
+<h1>Novo Cliente</h1>
+<form asp-action="Create">
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="CPF"></label>
+        <input asp-for="CPF" class="form-control" maxlength="14" oninput="mascaraCPF(this)" />
+        <span asp-validation-for="CPF" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-success">Salvar</button>
+    <a asp-action="List" class="btn btn-secondary">Voltar</a>
+</form>
+
+<script>
+function mascaraCPF(input) {
+    let value = input.value.replace(/\D/g, '');
+    if (value.length > 11) value = value.slice(0, 11);
+    value = value.replace(/(\d{3})(\d)/, '$1.$2');
+    value = value.replace(/(\d{3})(\d)/, '$1.$2');
+    value = value.replace(/(\d{3})(\d{1,2})$/, '$1-$2');
+    input.value = value;
+}
+</script> 

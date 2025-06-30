@@ -8,5 +8,11 @@ namespace TotemPWA.ViewModels
     {
         public Combo Combo { get; set; }
         public IEnumerable<SelectListItem> Products { get; set; }
+
+        public ComboViewModel()
+        {
+            Combo = new Combo();
+            Products = new List<SelectListItem>();
+        }
     }
 }

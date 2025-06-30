@@ -1,0 +1,16 @@
+@model TotemPWA.Models.Client
+
+@{
+    ViewData["Title"] = "Excluir Cliente";
+}
+
+<h1>Confirmar Exclusão</h1>
+<div>
+    <h4>Nome: <strong>@Model.Name</strong></h4>
+    <h4>CPF: <strong>@Model.CPF</strong></h4>
+    <form asp-action="DeleteConfirmed" asp-route-id="@Model.Id">
+        <input type="hidden" asp-for="Id" />
+        <button type="submit" class="btn btn-danger">Excluir</button>
+        <a asp-action="List" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div> 

@@ -1,0 +1,21 @@
+@model TotemPWA.ViewModels.AditionalViewModel
+
+@{
+    ViewData["Title"] = "Novo Adicional";
+}
+
+<h1>Novo Adicional</h1>
+<form asp-action="Create">
+    <div class="form-group">
+        <label asp-for="Additional.ProductId">Produto</label>
+        <select asp-for="Additional.ProductId" asp-items="Model.Products" class="form-control"></select>
+        <span asp-validation-for="Additional.ProductId" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Additional.IngredientId">Ingrediente</label>
+        <select asp-for="Additional.IngredientId" asp-items="Model.Ingredients" class="form-control"></select>
+        <span asp-validation-for="Additional.IngredientId" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-success">Salvar</button>
+    <a asp-action="List" class="btn btn-secondary">Voltar</a>
+</form> 

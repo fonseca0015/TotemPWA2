@@ -1,0 +1,21 @@
+@model TotemPWA.ViewModels.AditionalViewModel
+
+@{
+    ViewData["Title"] = "Editar Adicional";
+}
+
+<h1>Editar Adicional</h1>
+<form asp-action="Edit">
+    <input type="hidden" asp-for="Additional.ProductId" />
+    <input type="hidden" asp-for="Additional.IngredientId" />
+    <div class="form-group">
+        <label asp-for="Additional.ProductId">Produto</label>
+        <select asp-for="Additional.ProductId" asp-items="Model.Products" class="form-control" disabled></select>
+    </div>
+    <div class="form-group">
+        <label asp-for="Additional.IngredientId">Ingrediente</label>
+        <select asp-for="Additional.IngredientId" asp-items="Model.Ingredients" class="form-control" disabled></select>
+    </div>
+    <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+    <a asp-action="List" class="btn btn-secondary">Voltar</a>
+</form> 
