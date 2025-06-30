@@ -58,54 +58,7 @@
 
             <div class="modal-group">
                 <strong>Adicionais:</strong>
-                <div class="modal-item-quantidade">
-                    <span class="label-item">Queijo adicional</span>
-                    <div>
-                        <button class="btn-quantidade-modal" onclick="alterarQtdExtra('queijo', -1)">-</button>
-                        <span class="quantidade-valor" id="qtdQueijo">0</span>
-                        <button class="btn-quantidade-modal" onclick="alterarQtdExtra('queijo', 1)">+</button>
-                    </div>
-                </div>
-                <div class="modal-item-quantidade" style="margin-top: 10px;">
-                    <span class="label-item">Bacon</span>
-                    <div>
-                        <button class="btn-quantidade-modal" onclick="alterarQtdExtra('bacon', -1)">-</button>
-                        <span class="quantidade-valor" id="qtdBacon">0</span>
-                        <button class="btn-quantidade-modal" onclick="alterarQtdExtra('bacon', 1)">+</button>
-                    </div>
-                </div>
-                <div class="modal-item-quantidade" style="margin-top: 10px;">
-                    <span class="label-item">Tomate</span>
-                    <div>
-                        <button class="btn-quantidade-modal" onclick="alterarQtdExtra('tomate', -1)">-</button>
-                        <span class="quantidade-valor" id="qtdTomate">0</span>
-                        <button class="btn-quantidade-modal" onclick="alterarQtdExtra('tomate', 1)">+</button>
-                    </div>
-                </div>
-                <div class="modal-item-quantidade" style="margin-top: 10px;">
-                    <span class="label-item">Alface</span>
-                    <div>
-                        <button class="btn-quantidade-modal" onclick="alterarQtdExtra('alface', -1)">-</button>
-                        <span class="quantidade-valor" id="qtdAlface">0</span>
-                        <button class="btn-quantidade-modal" onclick="alterarQtdExtra('alface', 1)">+</button>
-                    </div>
-                </div>
-                <div class="modal-item-quantidade" style="margin-top: 10px;">
-                    <span class="label-item">Cebola roxa</span>
-                    <div>
-                        <button class="btn-quantidade-modal" onclick="alterarQtdExtra('cebola', -1)">-</button>
-                        <span class="quantidade-valor" id="qtdCebola">0</span>
-                        <button class="btn-quantidade-modal" onclick="alterarQtdExtra('cebola', 1)">+</button>
-                    </div>
-                </div>
-                <div class="modal-item-quantidade" style="margin-top: 10px;">
-                    <span class="label-item">Catupiry</span>
-                    <div>
-                        <button class="btn-quantidade-modal" onclick="alterarQtdExtra('catupiry', -1)">-</button>
-                        <span class="quantidade-valor" id="qtdCatupiry">0</span>
-                        <button class="btn-quantidade-modal" onclick="alterarQtdExtra('catupiry', 1)">+</button>
-                    </div>
-                </div>
+                <div id="adicionais-container"></div>
             </div>
 
             <button class="modal-adicionar" onclick="salvarPersonalizacao()">Salvar</button>
@@ -160,12 +113,53 @@
         color: #721c24;
         border: 1px solid #f5c6cb;
     }
+    .adicional-linha {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 6px 0;
+        border-bottom: 1px solid #eee;
+        font-size: 1em;
+    }
+    .ad-preco {
+        color: #42B61F;
+        font-size: 0.95em;
+        margin-left: 4px;
+    }
+    .ad-quantidade-controle {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+    .ad-btn {
+        background: #f3f3f3;
+        border: 1px solid #ccc;
+        border-radius: 50%;
+        width: 28px;
+        height: 28px;
+        font-size: 1.1em;
+        color: #333;
+        cursor: pointer;
+        transition: background 0.2s;
+    }
+    .ad-btn:hover {
+        background: #e0e0e0;
+    }
+    .ad-qtd {
+        min-width: 18px;
+        display: inline-block;
+        text-align: center;
+        font-weight: bold;
+        font-size: 1.05em;
+    }
     </style>
 
     <script>
-        let currentEditingIndex = -1; // Variável para rastrear o item que está sendo editado
+        let currentEditingIndex = -1;
         let descontoCupom = 0;
         let tipoCupom = null;
+        let adicionaisDisponiveis = [];
+        let adicionaisSelecionados = {};
 
         document.addEventListener('DOMContentLoaded', () => {
             renderCart();
@@ -190,7 +184,7 @@
                 Document.getElementById("botaoConfimar").href=""; 
             } else {
                 cart.forEach((item, index) => {
-                    const itemTotal = item.price * item.quantity;
+                    const itemTotal = calcularPrecoItem(item);
                     const itemHtml = `
                         <div class="card-item">
                             <div class="card-info">
@@ -246,7 +240,7 @@
         function updateTotals() {
             const cart = getCart();
             const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-            let totalPrice = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            let totalPrice = cart.reduce((sum, item) => sum + calcularPrecoItem(item), 0);
 
             if (descontoCupom > 0) {
                 if (tipoCupom === 'percent') {
@@ -261,33 +255,27 @@
             sessionStorage.setItem('cartTotal', totalPrice);
         }
 
-        // Objeto para armazenar as quantidades dos ingredientes do modal atual
-        let ingredientesPersonalizados = {};
-
-        // Função para abrir o modal de personalização
         function abrirModalPersonalizar(index) {
             currentEditingIndex = index;
             const cart = getCart();
             const item = cart[index];
-
             if (!item) return;
-
             document.getElementById('tituloModalPersonalizar').innerText = 'Personalizar ' + item.name;
-            
-            // Carrega as personalizações atuais do item para o estado do modal
-            ingredientesPersonalizados = JSON.parse(JSON.stringify(item.customizations));
-            
-            atualizarDisplayIngredientes();
-            document.getElementById('modalPersonalizar').style.display = 'flex';
+            adicionaisSelecionados = item.adicionais || {};
+            fetch(`/api/adicionais/por-produto/${item.productId}`)
+                .then(res => res.json())
+                .then(adicionais => {
+                    adicionaisDisponiveis = adicionais;
+                    renderizarAdicionaisModal();
+                    document.getElementById('modalPersonalizar').style.display = 'flex';
+                });
         }
 
-        // Função para fechar o modal de personalização
         function fecharModalPersonalizar() {
             document.getElementById('modalPersonalizar').style.display = 'none';
-            currentEditingIndex = -1; // Limpa o índice ao fechar
+            currentEditingIndex = -1;
         }
 
-        // Função para alterar a quantidade de um ingrediente no modal
         function alterarQtdExtra(ingrediente, valor) {
             let quantidadeAtual = ingredientesPersonalizados[ingrediente];
             let novaQuantidade = quantidadeAtual + valor;
@@ -315,13 +303,59 @@
             }
         }
 
+        function renderizarAdicionaisModal() {
+            const container = document.getElementById('adicionais-container');
+            container.innerHTML = '';
+            if (!adicionaisDisponiveis || adicionaisDisponiveis.length === 0) {
+                container.innerHTML = '<p style="color: #888;">Nenhum adicional disponível para este produto.</p>';
+                return;
+            }
+            adicionaisDisponiveis.forEach(ad => {
+                const qtd = adicionaisSelecionados[ad.ingredientId]?.qtd || 0;
+                const preco = (typeof ad.price === 'number' && !isNaN(ad.price)) ? ad.price : 0;
+                container.innerHTML += `
+                    <div class='modal-item-quantidade adicional-linha'>
+                        <span class='label-item'>${ad.ingredientName} <span class='ad-preco'>(+R$ ${preco.toLocaleString('pt-BR', {minimumFractionDigits:2})})</span></span>
+                        <div class='ad-quantidade-controle'>
+                            <button type="button" class="btn-quantidade-modal ad-btn" onclick='alterarQtdAdicional(${ad.ingredientId}, -1, ${preco})'>-</button>
+                            <span id='qtdAdicional${ad.ingredientId}' class='ad-qtd'>${qtd}</span>
+                            <button type="button" class="btn-quantidade-modal ad-btn" onclick='alterarQtdAdicional(${ad.ingredientId}, 1, ${preco})'>+</button>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        function alterarQtdAdicional(ingredientId, delta, price) {
+            if (!adicionaisSelecionados[ingredientId]) adicionaisSelecionados[ingredientId] = { qtd: 0, price: price };
+            adicionaisSelecionados[ingredientId].qtd += delta;
+            if (adicionaisSelecionados[ingredientId].qtd < 0) adicionaisSelecionados[ingredientId].qtd = 0;
+            document.getElementById(`qtdAdicional${ingredientId}`).innerText = adicionaisSelecionados[ingredientId].qtd;
+            atualizarPrecoItemModal();
+        }
+
+        function atualizarPrecoItemModal() {
+            // Opcional: mostrar preço atualizado no modal
+        }
+
         function salvarPersonalizacao() {
             if (currentEditingIndex > -1) {
                 let cart = getCart();
-                cart[currentEditingIndex].customizations = ingredientesPersonalizados;
+                cart[currentEditingIndex].adicionais = adicionaisSelecionados;
                 saveCart(cart);
             }
             fecharModalPersonalizar();
+        }
+
+        function calcularPrecoItem(item) {
+            let precoBase = item.price;
+            if (item.adicionais) {
+                for (const key in item.adicionais) {
+                    const ad = item.adicionais[key];
+                    precoBase += ad.price * ad.qtd;
+                }
+            }
+            return precoBase * item.quantity;
         }
 
         // --- Funções para o Modal de Cupom ---

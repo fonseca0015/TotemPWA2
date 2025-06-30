@@ -119,5 +119,20 @@ namespace TotemPWA.Controllers.Admin
             await _context.SaveChangesAsync();
             return RedirectToAction("List");
         }
+
+        [HttpGet("/api/adicionais/por-produto/{productId}")]
+        public async Task<IActionResult> GetAdditionalsByProduct(int productId)
+        {
+            var additionals = await _context.Additionals
+                .Include(a => a.Ingredient)
+                .Where(a => a.ProductId == productId)
+                .Select(a => new {
+                    IngredientId = a.IngredientId,
+                    IngredientName = a.Ingredient.Name,
+                    Price = a.Ingredient.Price
+                })
+                .ToListAsync();
+            return Json(additionals);
+        }
     }
 } 
