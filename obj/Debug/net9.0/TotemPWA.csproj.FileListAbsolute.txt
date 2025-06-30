@@ -2641,7 +2641,6 @@ C:\Users\Pedro\OneDrive\Área de Trabalho\teste\TotemPWA2\obj\Debug\net9.0\ref\T
 C:\Users\Pedro\OneDrive\Área de Trabalho\a\TotemPWA2\obj\Debug\net9.0\compressed\44zl1togr2-rtr7swfi0l.gz
 C:\Users\Pedro\OneDrive\Área de Trabalho\a\TotemPWA2\obj\Debug\net9.0\compressed\enxvb44kbb-2m3dqh6y9l.gz
 C:\Users\Pedro\OneDrive\Área de Trabalho\a\TotemPWA2\obj\Debug\net9.0\compressed\volfefclzc-28h5x3dqm8.gz
-C:\Users\Pedro\OneDrive\Área de Trabalho\a\TotemPWA2\obj\Debug\net9.0\compressed\gtrgf87wf6-yx8ixnqz63.gz
 C:\Users\Pedro\OneDrive\Área de Trabalho\vamos\TotemPWA2\bin\Debug\net9.0\appsettings.Development.json
 C:\Users\Pedro\OneDrive\Área de Trabalho\vamos\TotemPWA2\bin\Debug\net9.0\appsettings.json
 C:\Users\Pedro\OneDrive\Área de Trabalho\vamos\TotemPWA2\bin\Debug\net9.0\data\SeedData.json
@@ -3016,3 +3015,4 @@ C:\Users\Gabriel\Desktop\Totem\totempwa2\obj\Debug\net9.0\compressed\jouvgui3wh-
 C:\Users\Gabriel\Desktop\Totem\totempwa2\obj\Debug\net9.0\compressed\3mi9kfqw3w-6wz3jllds4.gz
 C:\Users\Gabriel\Desktop\Totem\totempwa2\obj\Debug\net9.0\TotemPWA.csproj.Up2Date
 C:\Users\Gabriel\Desktop\Totem\totempwa2\obj\Debug\net9.0\compressed\gtrgf87wf6-qyh8surb92.gz
+C:\Users\Pedro\OneDrive\Área de Trabalho\a\TotemPWA2\obj\Debug\net9.0\compressed\gtrgf87wf6-mfauclxker.gz
