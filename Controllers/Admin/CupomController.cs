@@ -87,5 +87,26 @@ namespace TotemPWA.Controllers.Admin
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(List));
         }
+
+        public class CupomRequest
+        {
+            public string Codigo { get; set; }
+        }
+
+        [HttpPost]
+        [Route("/api/cupom/validar")]
+        public async Task<IActionResult> ValidarCupom([FromBody] CupomRequest request)
+        {
+            var cupom = await _context.Cupons.FirstOrDefaultAsync(c => c.Code == request.Codigo);
+            if (cupom == null)
+                return NotFound(new { valido = false, mensagem = "Cupom não encontrado." });
+
+            return Ok(new {
+                valido = true,
+                tipo = cupom.Type, // "percent" ou "valor"
+                valor = cupom.Value,
+                mensagem = "Cupom aplicado!"
+            });
+        }
     }
 }

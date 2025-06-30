@@ -137,6 +137,8 @@
 
     <script>
         let currentEditingIndex = -1; // Variável para rastrear o item que está sendo editado
+        let descontoCupom = 0;
+        let tipoCupom = null;
 
         document.addEventListener('DOMContentLoaded', () => {
             renderCart();
@@ -217,12 +219,18 @@
         function updateTotals() {
             const cart = getCart();
             const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-            const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            let totalPrice = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+
+            if (descontoCupom > 0) {
+                if (tipoCupom === 'percent') {
+                    totalPrice = totalPrice * (1 - descontoCupom / 100);
+                } else {
+                    totalPrice = Math.max(0, totalPrice - descontoCupom);
+                }
+            }
 
             document.getElementById('total-items-footer').innerText = totalItems;
             document.getElementById('total-price-footer').innerText = totalPrice.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-
-            // Atualiza o total no sessionStorage para ser usado em outras páginas
             sessionStorage.setItem('cartTotal', totalPrice);
         }
 
@@ -313,12 +321,33 @@
 
         function aplicarCupom() {
             const codigoCupom = cupomInput.value.trim();
-            if (codigoCupom) {
-                alert('Cupom "' + codigoCupom + '" aplicado! (Lógica de validação e aplicação virá no backend)');
-                fecharModalCupom();
-            } else {
+            if (!codigoCupom) {
                 alert('Por favor, digite um código de cupom.');
+                return;
             }
+
+            fetch('/api/cupom/validar', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ codigo: codigoCupom })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.valido) {
+                    aplicarDescontoCupom(data);
+                    alert(data.mensagem);
+                    fecharModalCupom();
+                } else {
+                    alert(data.mensagem || 'Cupom inválido.');
+                }
+            })
+            .catch(() => alert('Erro ao validar cupom.'));
+        }
+
+        function aplicarDescontoCupom(data) {
+            tipoCupom = data.tipo;
+            descontoCupom = data.valor;
+            updateTotals();
         }
     </script>
 </body>
