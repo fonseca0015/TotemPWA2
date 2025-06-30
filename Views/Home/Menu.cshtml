@@ -39,6 +39,18 @@
                         }
                     </div>
                     <div class="quadradoLanches">
+                        @if (ViewBag.Combos != null)
+                        {
+                            foreach (var combo in ViewBag.Combos)
+                            {
+                                var descricao = "Inclui: " + string.Join(", ", combo.itens);
+                                <div class="quadradoLanche" onclick="abrirModal('@combo.id', '@combo.name', '@combo.price', '@descricao', '@GetProductImage(combo)')">
+                                    <img src="@GetProductImage(combo)" class="lanchesFotos">
+                                    <p class="textoLanche1">@combo.name</p>
+                                    <p class="preçoLanche1">@combo.price.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("pt-BR"))</p>
+                                </div>
+                            }
+                        }
                         @foreach (var product in ViewBag.Products)
                         {
                             <div class="quadradoLanche" onclick="abrirModal('@product.id', '@product.name', '@product.price', 'adicionar img e descrição no banco ', '@GetProductImage(product)')">

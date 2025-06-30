@@ -90,7 +90,7 @@ namespace TotemPWA.Controllers.Admin
 
         public class CupomRequest
         {
-            public string Codigo { get; set; }
+            public string? Codigo { get; set; }
         }
 
         [HttpPost]

@@ -30,7 +30,9 @@ public class HomeController : Controller
             .Where(c => c.ParentCategoryId == null)
             .ToListAsync();
 
-        var activeCategoryId = categoryId ?? rootCategoriesRaw.FirstOrDefault()?.Id;
+        var activeCategoryId = categoryId;
+        if (activeCategoryId == null && rootCategoriesRaw.Count > 0)
+            activeCategoryId = rootCategoriesRaw.First().Id;
 
         var rootCategories = rootCategoriesRaw
             .Select(c => new
@@ -46,9 +48,11 @@ public class HomeController : Controller
             .Where(c => c.ParentCategoryId == activeCategoryId)
             .ToListAsync();
 
-        var activeSubcategoryId = subcategoriesRaw.Any(c => c.Id == subcategoryId)
-            ? subcategoryId
-            : subcategoriesRaw.FirstOrDefault()?.Id;
+        int? activeSubcategoryId = null;
+        if (subcategoriesRaw.Any(c => c.Id == subcategoryId))
+            activeSubcategoryId = subcategoryId;
+        else if (subcategoriesRaw.Count > 0)
+            activeSubcategoryId = subcategoriesRaw.First().Id;
 
         var subcategories = subcategoriesRaw
             .Select(c => new
@@ -71,10 +75,27 @@ public class HomeController : Controller
             })
             .ToListAsync();
 
+        // Buscar combos desta subcategoria
+        var combos = await _context.Products
+            .Where(p => p.CategoryId == activeSubcategoryId)
+            .Select(p => new {
+                id = p.Id,
+                name = p.Name,
+                price = p.Price,
+                image = p.Image,
+                itens = _context.Combos
+                    .Where(c => c.ProductComboId == p.Id)
+                    .Select(c => c.Product != null ? c.Product.Name : "")
+                    .ToList()
+            })
+            .Where(p => p.itens.Count > 0)
+            .ToListAsync();
+
         ViewBag.Category = activeCategoryId;
         ViewBag.Categories = rootCategories;
         ViewBag.SubCategories = subcategories;
         ViewBag.Products = products;
+        ViewBag.Combos = combos;
 
         return View("Menu");
     }
