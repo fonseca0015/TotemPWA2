@@ -1,0 +1,139 @@
+@{
+    ViewData["Title"] = "Painel Administrativo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="admin-dashboard">
+    <div class="admin-header">
+        <h1 class="admin-title">
+            <i class="fas fa-cogs"></i>
+            Painel Administrativo
+        </h1>
+        <p class="admin-subtitle">Gerencie todos os dados do sistema</p>
+    </div>
+
+    <div class="admin-grid">
+        <!-- Categorias -->
+        <div class="admin-card" onclick="window.location.href='/Admin/Category/List'">
+            <div class="card-icon">
+                <i class="fas fa-tags"></i>
+            </div>
+            <div class="card-content">
+                <h3>Categorias</h3>
+                <p>Gerencie categorias e subcategorias</p>
+            </div>
+            <div class="card-arrow">
+                <i class="fas fa-chevron-right"></i>
+            </div>
+        </div>
+
+        <!-- Produtos -->
+        <div class="admin-card" onclick="window.location.href='/Admin/Product/List'">
+            <div class="card-icon">
+                <i class="fas fa-box"></i>
+            </div>
+            <div class="card-content">
+                <h3>Produtos</h3>
+                <p>Gerencie produtos do cardápio</p>
+            </div>
+            <div class="card-arrow">
+                <i class="fas fa-chevron-right"></i>
+            </div>
+        </div>
+
+        <!-- Ingredientes -->
+        <div class="admin-card" onclick="window.location.href='/Admin/Ingredient/List'">
+            <div class="card-icon">
+                <i class="fas fa-leaf"></i>
+            </div>
+            <div class="card-content">
+                <h3>Ingredientes</h3>
+                <p>Gerencie ingredientes disponíveis</p>
+            </div>
+            <div class="card-arrow">
+                <i class="fas fa-chevron-right"></i>
+            </div>
+        </div>
+
+        <!-- Adicionais -->
+        <div class="admin-card" onclick="window.location.href='/Admin/Aditional/List'">
+            <div class="card-icon">
+                <i class="fas fa-plus-circle"></i>
+            </div>
+            <div class="card-content">
+                <h3>Adicionais</h3>
+                <p>Gerencie adicionais dos produtos</p>
+            </div>
+            <div class="card-arrow">
+                <i class="fas fa-chevron-right"></i>
+            </div>
+        </div>
+
+        <!-- Combos -->
+        <div class="admin-card" onclick="window.location.href='/Admin/Combo/List'">
+            <div class="card-icon">
+                <i class="fas fa-layer-group"></i>
+            </div>
+            <div class="card-content">
+                <h3>Combos</h3>
+                <p>Gerencie combos de produtos</p>
+            </div>
+            <div class="card-arrow">
+                <i class="fas fa-chevron-right"></i>
+            </div>
+        </div>
+
+        <!-- Promoções -->
+        <div class="admin-card" onclick="window.location.href='/Admin/Promotion/List'">
+            <div class="card-icon">
+                <i class="fas fa-percentage"></i>
+            </div>
+            <div class="card-content">
+                <h3>Promoções</h3>
+                <p>Gerencie promoções e descontos</p>
+            </div>
+            <div class="card-arrow">
+                <i class="fas fa-chevron-right"></i>
+            </div>
+        </div>
+
+        <!-- Cupons -->
+        <div class="admin-card" onclick="window.location.href='/Admin/Cupom/List'">
+            <div class="card-icon">
+                <i class="fas fa-ticket-alt"></i>
+            </div>
+            <div class="card-content">
+                <h3>Cupons</h3>
+                <p>Gerencie cupons de desconto</p>
+            </div>
+            <div class="card-arrow">
+                <i class="fas fa-chevron-right"></i>
+            </div>
+        </div>
+
+        <!-- Clientes -->
+        <div class="admin-card" onclick="window.location.href='/Admin/Cliente/List'">
+            <div class="card-icon">
+                <i class="fas fa-users"></i>
+            </div>
+            <div class="card-content">
+                <h3>Clientes</h3>
+                <p>Gerencie cadastro de clientes</p>
+            </div>
+            <div class="card-arrow">
+                <i class="fas fa-chevron-right"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="admin-footer">
+        <a href="/" class="btn-voltar">
+            <i class="fas fa-arrow-left"></i>
+            Voltar ao Totem
+        </a>
+    </div>
+</div>
+
+
+
+ 

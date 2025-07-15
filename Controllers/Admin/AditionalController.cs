@@ -126,13 +126,15 @@ namespace TotemPWA.Controllers.Admin
             var additionals = await _context.Additionals
                 .Include(a => a.Ingredient)
                 .Where(a => a.ProductId == productId)
-                .Select(a => new {
-                    IngredientId = a.IngredientId,
-                    IngredientName = a.Ingredient.Name,
-                    Price = a.Ingredient.Price
-                })
                 .ToListAsync();
-            return Json(additionals);
+                
+            var result = additionals.Select(a => new {
+                IngredientId = a.IngredientId,
+                IngredientName = a.Ingredient != null ? a.Ingredient.Name : "Ingrediente não encontrado",
+                Price = a.Ingredient != null ? a.Ingredient.Price : 0
+            }).ToList();
+            
+            return Json(result);
         }
     }
 } 
