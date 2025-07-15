@@ -8,14 +8,18 @@
 <h1>Nova Categoria</h1>
 
 <form asp-action="Create" method="post">
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
     <div class="form-group">
         <label asp-for="Category.Name"></label>
         <input asp-for="Category.Name" class="form-control" />
+        <span asp-validation-for="Category.Name" class="text-danger"></span>
     </div>
 
     <div class="form-group">
         <label asp-for="Category.Icon"></label>
         <input asp-for="Category.Icon" class="form-control" />
+        <span asp-validation-for="Category.Icon" class="text-danger"></span>
     </div>
 
     <div class="form-group">
@@ -23,6 +27,7 @@
         <select asp-for="Category.ParentCategoryId" asp-items="Model.Categories" class="form-control">
             <option value="">(Nenhuma)</option>
         </select>
+        <span asp-validation-for="Category.ParentCategoryId" class="text-danger"></span>
     </div>
 
     <button type="submit" class="btn btn-success">Criar</button>
