@@ -3012,8 +3012,8 @@ C:\Users\Gabriel\Desktop\Totem\totempwa2\obj\Debug\net9.0\compressed\jouvgui3wh-
 C:\Users\Gabriel\Desktop\Totem\totempwa2\obj\Debug\net9.0\compressed\3mi9kfqw3w-6wz3jllds4.gz
 C:\Users\Gabriel\Desktop\Totem\totempwa2\obj\Debug\net9.0\TotemPWA.csproj.Up2Date
 C:\Users\Gabriel\Desktop\Totem\totempwa2\obj\Debug\net9.0\compressed\gtrgf87wf6-qyh8surb92.gz
-C:\Users\Pedro\OneDrive\Área de Trabalho\a\TotemPWA2\obj\Debug\net9.0\compressed\gtrgf87wf6-mfauclxker.gz
 C:\Users\Arthur\Desktop\TotemPWA2\obj\Debug\net9.0\compressed\gtrgf87wf6-mfauclxker.gz
 C:\Users\Arthur\Desktop\TotemPWA2\obj\Debug\net9.0\compressed\44zl1togr2-rtr7swfi0l.gz
 C:\Users\Arthur\Desktop\TotemPWA2\obj\Debug\net9.0\compressed\enxvb44kbb-2m3dqh6y9l.gz
-C:\Users\Pedro\OneDrive\Área de Trabalho\A\TotemPWA2\obj\Debug\net9.0\compressed\32l8xtn7oc-3cqyrbfwhh.gz
+C:\Users\Pedro\OneDrive\Área de Trabalho\A\TotemPWA2\obj\Debug\net9.0\compressed\32l8xtn7oc-2dknjlxc6d.gz
+C:\Users\Pedro\OneDrive\Área de Trabalho\A\TotemPWA2\obj\Debug\net9.0\compressed\gtrgf87wf6-upf2cn6kp9.gz

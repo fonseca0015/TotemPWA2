@@ -1,9 +1,18 @@
 /* Estilos para páginas administrativas */
 
+:root {
+    --vermelho: #b80000;
+    --amarelo: #ffd700;
+    --verde: #8bc34a;
+    --cinza-card: #fff;
+    --cinza-borda: #eee;
+    --cinza-sombra: rgba(0,0,0,0.08);
+}
+
 /* Dashboard Principal */
 .admin-dashboard {
     min-height: 100vh;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, var(--vermelho) 0%, var(--amarelo) 100%);
     padding: 2rem 1rem;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -11,25 +20,31 @@
 .admin-header {
     text-align: center;
     margin-bottom: 3rem;
-    color: white;
+    color: var(--vermelho);
+    background: linear-gradient(135deg, var(--amarelo) 60%, var(--vermelho) 100%);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px var(--cinza-sombra);
 }
 
 .admin-title {
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    text-shadow: 0 2px 4px rgba(0,0,0,0.08);
+    color: var(--vermelho);
 }
 
 .admin-title i {
     margin-right: 0.5rem;
-    color: #ffd700;
+    color: var(--amarelo);
 }
 
 .admin-subtitle {
     font-size: 1.1rem;
     opacity: 0.9;
     margin: 0;
+    color: var(--vermelho);
 }
 
 .admin-grid {
@@ -41,10 +56,10 @@
 }
 
 .admin-card {
-    background: white;
+    background: var(--cinza-card);
     border-radius: 15px;
     padding: 2rem;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 30px var(--cinza-sombra);
     transition: all 0.3s ease;
     cursor: pointer;
     position: relative;
@@ -52,6 +67,7 @@
     display: flex;
     align-items: center;
     gap: 1.5rem;
+    border: 2px solid var(--amarelo);
 }
 
 .admin-card::before {
@@ -61,14 +77,15 @@
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, #667eea, #764ba2);
+    background: linear-gradient(90deg, var(--vermelho), var(--amarelo));
     transform: scaleX(0);
     transition: transform 0.3s ease;
 }
 
 .admin-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    box-shadow: 0 20px 40px var(--cinza-sombra);
+    border-color: var(--verde);
 }
 
 .admin-card:hover::before {
@@ -79,16 +96,17 @@
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    background: linear-gradient(135deg, var(--amarelo), var(--verde));
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+    box-shadow: 0 2px 8px var(--cinza-sombra);
 }
 
 .card-icon i {
     font-size: 1.5rem;
-    color: white;
+    color: var(--vermelho);
 }
 
 .card-content {
@@ -99,7 +117,7 @@
     margin: 0 0 0.5rem 0;
     font-size: 1.3rem;
     font-weight: 600;
-    color: #333;
+    color: var(--vermelho);
 }
 
 .card-content p {
@@ -109,12 +127,12 @@
 }
 
 .card-arrow {
-    color: #ccc;
+    color: var(--amarelo);
     transition: all 0.3s ease;
 }
 
 .admin-card:hover .card-arrow {
-    color: #667eea;
+    color: var(--verde);
     transform: translateX(5px);
 }
 
@@ -126,63 +144,66 @@
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    background: rgba(255,255,255,0.2);
-    color: white;
+    background: var(--vermelho);
+    color: #fff;
     text-decoration: none;
     padding: 1rem 2rem;
     border-radius: 50px;
     font-weight: 500;
     transition: all 0.3s ease;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.3);
+    border: 2px solid var(--amarelo);
+    font-size: 1.1rem;
 }
 
 .btn-voltar:hover {
-    background: rgba(255,255,255,0.3);
-    color: white;
+    background: var(--amarelo);
+    color: var(--vermelho);
     text-decoration: none;
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 5px 15px var(--cinza-sombra);
+    border-color: var(--verde);
 }
 
 /* Estilos para páginas de listagem */
 .admin-header {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
+    background: linear-gradient(135deg, var(--amarelo) 60%, var(--vermelho) 100%);
+    color: var(--vermelho);
     padding: 2rem;
     border-radius: 10px;
     margin-bottom: 2rem;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px var(--cinza-sombra);
 }
 
 .admin-header h2 {
     margin: 0;
     font-weight: 600;
+    color: var(--vermelho);
 }
 
 .btn-voltar-painel {
-    background: rgba(255,255,255,0.2);
-    color: white;
-    border: 1px solid rgba(255,255,255,0.3);
+    background: var(--vermelho);
+    color: #fff;
+    border: 2px solid var(--amarelo);
     transition: all 0.3s ease;
 }
 
 .btn-voltar-painel:hover {
-    background: rgba(255,255,255,0.3);
-    color: white;
+    background: var(--amarelo);
+    color: var(--vermelho);
     transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 10px var(--cinza-sombra);
+    border-color: var(--verde);
 }
 
 .table {
     background: white;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px var(--cinza-sombra);
 }
 
 .table thead th {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, var(--vermelho) 0%, var(--amarelo) 100%);
     color: white;
     border: none;
     font-weight: 600;
@@ -192,11 +213,11 @@
 .table tbody td {
     padding: 1rem;
     vertical-align: middle;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid var(--cinza-borda);
 }
 
 .table tbody tr:hover {
-    background-color: #f8f9fa;
+    background-color: #fffbe6;
     transition: background-color 0.3s ease;
 }
 
@@ -209,7 +230,7 @@
 
 .btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 10px var(--cinza-sombra);
 }
 
 .btn-sm {

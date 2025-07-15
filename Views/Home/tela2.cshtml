@@ -169,36 +169,41 @@
 
             if (cart.length === 0) {
                 container.innerHTML += '<p>Seu carrinho está vazio.</p>';
-                Document.getElementById("botaoConfimar").href=""; 
-            } else {
-                cart.forEach((item, index) => {
-                    const itemTotal = calcularPrecoItem(item);
-                    const itemHtml = `
-                        <div class="card-item">
-                            <div class="card-info">
-                                <img src="${item.image}" alt="${item.name}" class="lanchesFotos">
-                                <div class="card-texto">
-                                    <h4>${item.name}</h4>
-                                    <p>${item.description}</p>
-                                     <div class="cart-item-actions">
-                                        <button class="personalizar-item-btn" onclick="abrirModalPersonalizar(${index})">Personalizar</button>
-                                        <button class="remover-item-btn" onclick="removeItem(${index})">Remover</button>
-                                     </div>
-                                </div>
-                            </div>
-                            <div>
-                                <p class="card-preco">${itemTotal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</p>
-                                <div class="quantidade-controle">
-                                    <button class="btn-quantidade" onclick="changeQuantity(${index}, -1)">-</button>
-                                    <span class="quantidade">${item.quantity}</span>
-                                    <button class="btn-quantidade" onclick="changeQuantity(${index}, 1)">+</button>
-                                </div>
+                document.getElementById("botaoConfimar").href = "";
+                // Zera os totais do rodapé
+                document.getElementById('total-items-footer').innerText = 0;
+                document.getElementById('total-price-footer').innerText = 'R$ 0,00';
+                sessionStorage.setItem('cartTotal', 0);
+                return;
+            }
+
+            cart.forEach((item, index) => {
+                const itemTotal = calcularPrecoItem(item);
+                const itemHtml = `
+                    <div class="card-item">
+                        <div class="card-info">
+                            <img src="${item.image}" alt="${item.name}" class="lanchesFotos">
+                            <div class="card-texto">
+                                <h4>${item.name}</h4>
+                                <p>${item.description}</p>
+                                 <div class="cart-item-actions">
+                                    <button class="personalizar-item-btn" onclick="abrirModalPersonalizar(${index})">Personalizar</button>
+                                    <button class="remover-item-btn" onclick="removeItem(${index})">Remover</button>
+                                 </div>
                             </div>
                         </div>
-                    `;
-                    container.innerHTML += itemHtml;
-                });
-            }
+                        <div>
+                            <p class="card-preco">${itemTotal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</p>
+                            <div class="quantidade-controle">
+                                <button class="btn-quantidade" onclick="changeQuantity(${index}, -1)">-</button>
+                                <span class="quantidade">${item.quantity}</span>
+                                <button class="btn-quantidade" onclick="changeQuantity(${index}, 1)">+</button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                container.innerHTML += itemHtml;
+            });
             updateTotals();
         }
 
@@ -218,12 +223,10 @@
             cart.splice(index, 1);
             saveCart(cart);
         }
-        function cancelaPedido(){
-
-            let cart = getCart();
-            cart.forEach((item) => {
-                removeItem(item.index)
-            })
+        function cancelaPedido() {
+            sessionStorage.removeItem('cart');
+            sessionStorage.removeItem('cartTotal');
+            renderCart();
         }
         function updateTotals() {
             const cart = getCart();
